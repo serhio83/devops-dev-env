@@ -1,0 +1,35 @@
+---
+
+- name: Update all packages to the latest version
+  apt:
+    update_cache: yes
+    dpkg_options: 'force-confold,force-confdef'
+    upgrade: dist
+
+- name: Install packages
+  apt: name={{ item }} state=latest
+  with_items:
+    - build-essential
+    - vim
+    - nano
+    - net-tools
+    - htop
+    - iftop
+    - iotop
+    - wget
+    - sysstat
+    - python-minimal
+    - python-selinux
+    - python-pip
+    - ntp
+    - rsync
+    - git
+    - unzip
+    - zsh
+    - curl
+
+- name: Enable and start ntp service
+  service:
+    name: ntp
+    enabled: yes
+    state: started

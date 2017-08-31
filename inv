@@ -1,2 +1,2 @@
 [getcloud]
-vm1.srv		ansible_host=10.10.10.5		ansible_connection=ssh		ansible_user=root
+vm1.getcloud.io ansible_host=127.0.0.1 ansible_connection=ssh ansible_port=2222 ansible_user=root ansible_python_interpreter=/usr/bin/python3

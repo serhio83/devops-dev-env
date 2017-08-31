@@ -1,0 +1,11 @@
+---
+- block:
+    - include: install.yml
+      tags:
+        - install
+    - include: configure.yml
+      tags:
+        - configure
+#  when: ansible_distribution == 'CentOS' and ansible_distribution_major_version == '7'
+  tags:
+    - role-common-server

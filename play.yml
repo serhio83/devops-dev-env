@@ -1,10 +1,10 @@
 ---
 
 - hosts: 
-    - vm1.srv
+    - vm1.getcloud.io
   roles:
     - infrastructure/common-server
-    - infrastructure/docker-host
-    - infrastructure/rsyslogd
-    - infrastructure/common-firewall-rule
-    - infrastructure/dns
+    # - infrastructure/docker-host
+    # - infrastructure/rsyslogd
+    # - infrastructure/common-firewall-rule
+    # - infrastructure/dns

@@ -1,0 +1,16 @@
+---
+
+- name: Set hostname
+  hostname: name={{ hostname }}
+
+- name: Set timezone
+  timezone:
+    name: "{{ timezone }}"
+
+- name: Configure locale 
+  blockinfile:
+    dest: "/etc/environment"
+    block: |
+      LANG=en_US.utf-8
+      LC_ALL=en_US.utf-8
+
