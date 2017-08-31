@@ -1,0 +1,10 @@
+---
+
+- hosts: 
+    - vm1.srv
+  roles:
+    - infrastructure/common-server
+    - infrastructure/docker-host
+    - infrastructure/rsyslogd
+    - infrastructure/common-firewall-rule
+    - infrastructure/dns

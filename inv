@@ -1,0 +1,2 @@
+[getcloud]
+vm1.srv		ansible_host=10.10.10.5		ansible_connection=ssh		ansible_user=root
