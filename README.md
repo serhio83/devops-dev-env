@@ -1,6 +1,10 @@
 # Ansible configuration
 
-## developement setup
+## production deploy
+
+to be continued with jenkins... blackjack & whores...
+
+## developement deploy
 
 ```bash
 vagrant up
