@@ -27,6 +27,9 @@
     - unzip
     - zsh
     - curl
+    - apt-transport-https
+    - ca-certificates
+    - software-properties-common
 
 - name: Enable and start ntp service
   service:

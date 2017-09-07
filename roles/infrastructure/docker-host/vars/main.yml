@@ -1,0 +1,3 @@
+docker_version: 17.06.2
+docker_compose_version: 1.13.0
+docker_zfs_pool_name: docker

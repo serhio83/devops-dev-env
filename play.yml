@@ -4,6 +4,6 @@
     - vm1.getcloud.io
   roles:
     - infrastructure/common-server
-    # - infrastructure/docker-host
+    - infrastructure/docker-host
     # - infrastructure/rsyslogd
     # - infrastructure/dns
