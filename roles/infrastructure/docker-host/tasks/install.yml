@@ -6,12 +6,6 @@
 - name: Add ubuntu apt repository
   shell: add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
-# - name: Add Zfs on Linux Repository
-#   apt_repository: repo='ppa:zfs-native/stable' state=present
-
-# - name: Apt update
-#   shell: apt-get update && apt install -y docker-ce=17.06.2{{}}~ce-0~ubuntu
-
 - name: APT update
   apt:
     update_cache: yes
@@ -20,8 +14,11 @@
   apt: name={{ item }} state=latest
   with_items:
     - zfs
-- name: Create ZFS pool
-  shell: zpool create -f {{ docker_zfs_pool_name }} -m /var/lib/docker /dev/sdc
+
+- name: Create ZFS pool & filesystems for docker
+  shell: zpool create -f {{ docker_zfs_pool_name }} /dev/sdc \
+        && zfs create {{ docker_zfs_pool_name }}/{{ docker_zfs_vol_name }} \
+        && zfs set mountpoint=/var/lib/docker {{ docker_zfs_pool_name }}/{{ docker_zfs_vol_name }}
 
 - name: Create dir for docker daemon
   file: path=/etc/docker/  state=directory owner=root group=root mode=755
@@ -33,3 +30,6 @@
   apt: name={{ item }}
   with_items:
     - "docker-ce={{ docker_version }}~ce-0~ubuntu"
+
+- name: Install dockers-compose package
+  pip: name=docker-compose version={{ docker_compose_version }}  state=present

@@ -21,6 +21,7 @@
     - python-minimal
     - python-selinux
     - python-pip
+    - python3-pip
     - ntp
     - rsync
     - git
