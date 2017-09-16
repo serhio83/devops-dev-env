@@ -15,10 +15,23 @@
   with_items:
     - zfs
 
-- name: Create ZFS pool & filesystems for docker
-  shell: zpool create -f {{ docker_zfs_pool_name }} /dev/sdc \
-        && zfs create {{ docker_zfs_pool_name }}/{{ docker_zfs_vol_name }} \
-        && zfs set mountpoint=/var/lib/docker {{ docker_zfs_pool_name }}/{{ docker_zfs_vol_name }}
+- name: Check if ZFS pool exist
+  shell: zpool list -H|grep zpool
+  register: zpool_exist
+  ignore_errors: yes
+
+- name: Create ZFS pool
+  shell: zpool create -f -O compression=lz4 {{ docker_zfs_pool_name }} /dev/sdc 
+  register: zpool_created
+  when: zpool_exist.stdout == ""
+
+- name: Create ZFS filesystems for docker
+  zfs:
+    name: "{{ docker_zfs_pool_name }}/{{ docker_zfs_vol_name }}"
+    state: present
+    mountpoint: /var/lib/docker
+    compression: lz4
+  when: zpool_created
 
 - name: Create dir for docker daemon
   file: path=/etc/docker/  state=directory owner=root group=root mode=755
@@ -33,3 +46,8 @@
 
 - name: Install dockers-compose package
   pip: name=docker-compose version={{ docker_compose_version }}  state=present
+
+- name: Create default stratus network
+  docker_network:
+    name: stratus_default
+    appends: yes
