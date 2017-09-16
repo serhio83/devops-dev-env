@@ -16,12 +16,12 @@
     - zfs
 
 - name: Check if ZFS pool exist
-  shell: zpool list -H|grep zpool
+  shell: zpool list -H|grep {{ docker_zfs_pool_name }}
   register: zpool_exist
   ignore_errors: yes
 
 - name: Create ZFS pool
-  shell: zpool create -f -O compression=lz4 {{ docker_zfs_pool_name }} /dev/sdc 
+  shell: zpool create -f -O compression=lz4 {{ docker_zfs_pool_name }} {{ docker_zfs_block_device_path }} 
   register: zpool_created
   when: zpool_exist.stdout == ""
 

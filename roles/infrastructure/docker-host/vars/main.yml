@@ -2,3 +2,4 @@ docker_version: 17.06.2
 docker_compose_version: 1.16.0
 docker_zfs_pool_name: zpool
 docker_zfs_vol_name: docker
+docker_zfs_block_device_path: /dev/sdc
