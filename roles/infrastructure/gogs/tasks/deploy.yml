@@ -1,0 +1,7 @@
+---
+
+- name: Deploy gogs docker project
+  docker_service:
+    pull: yes
+    project_name: gogs
+    project_src: "{{ gogs_docker_compose_path }}"

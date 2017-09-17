@@ -5,5 +5,5 @@
   roles:
     - infrastructure/common-server
     - infrastructure/docker-host
-    # - infrastructure/rsyslogd
-    # - infrastructure/dns
+    - infrastructure/rsyslogd
+    - infrastructure/gogs

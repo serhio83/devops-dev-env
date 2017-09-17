@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  rsyslogd:
+    container_name: rsyslogd
+    image: serhio/rsyslogd
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - cfg:/cfg
+      - log:/var/log
+    ports:
+      - "127.0.0.1:514:514"
+      - "127.0.0.1:514:514/udp"
+    restart: always
+    networks:
+      - stratus_default
+
+volumes:
+  cfg: {}
+  log: {}
+
+networks:
+  stratus_default:
+    external: true

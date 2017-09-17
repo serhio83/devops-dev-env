@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  gogs:
+    container_name: gogs
+    image: gogs/gogs
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - data:/data
+    ports:
+      - "8081:3000"
+    restart: always
+    networks:
+      - stratus_default
+
+volumes:
+  data: {}
+
+networks:
+  stratus_default:
+    external: true

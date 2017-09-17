@@ -1,0 +1,20 @@
+---
+
+- name: Check if volume "{{ gogs_docker_volume_name }}" exists
+  command: docker volume inspect "{{ gogs_docker_volume_name }}"
+  register: volume_exists
+  failed_when: false
+  changed_when: False
+
+- name: Create volume "{{ gogs_docker_volume_name }}"
+  command: docker volume create --name "{{ gogs_docker_volume_name }}"
+  when: volume_exists|failed
+
+- name: Create compose dir gogs if not exist
+  file:
+    path: "{{ gogs_docker_compose_path }}"
+    state: directory
+    mode: 0755
+
+- name: Copy rsyslogd compose file
+  template: src=docker-compose.yml.j2 dest={{ gogs_docker_compose_path }}/docker-compose.yml owner=root group=root mode=755

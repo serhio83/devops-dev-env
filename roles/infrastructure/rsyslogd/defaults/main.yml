@@ -1,0 +1,4 @@
+---
+logrotate_rotate: 31
+logrotate_maxsize: 1G
+logrotate_delaycompress: true

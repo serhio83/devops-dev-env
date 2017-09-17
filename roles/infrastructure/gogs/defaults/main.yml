@@ -1,0 +1,4 @@
+---
+
+gogs_docker_compose_path: /opt/docker-compose/infrastructure/gogs
+gogs_docker_volume_name: 'gogs_data'

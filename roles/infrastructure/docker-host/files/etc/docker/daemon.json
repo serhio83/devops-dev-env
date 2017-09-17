@@ -1,3 +1,9 @@
 {
-  "storage-driver": "zfs"
+  "storage-driver": "zfs",
+
+  "log-driver": "syslog",
+  "log-opts": {
+     "syslog-address": "tcp://127.0.0.1:514",
+     "tag": "docker/{{.Name}}"
+  }
 }

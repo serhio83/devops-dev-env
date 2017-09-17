@@ -1,0 +1,69 @@
+---
+- name: Check if volume "{{ rsyslogd_docker_volume_name }}" exists
+  command: docker volume inspect "{{ rsyslogd_docker_volume_name }}"
+  register: volume_exists
+  failed_when: false
+  changed_when: False
+
+- name: Create volume "{{ rsyslogd_docker_volume_name }}"
+  command: docker volume create --name "{{ rsyslogd_docker_volume_name }}"
+  when: volume_exists|failed
+
+- name: Create compose dir rsyslogd if not exist
+  file:
+    path: "{{ rsyslogd_compose_path }}"
+    state: directory
+    mode: 0755
+
+- name: Copy rsyslogd compose file
+  template: src=docker-compose.yml.j2 dest={{ rsyslogd_compose_path }}/docker-compose.yml owner=root group=root mode=755
+
+- name: Get site images names from docker-compose file
+  shell:  "cat  {{ rsyslogd_compose_path }}/docker-compose.yml  | grep 'image:' | awk '{print $2}'"
+  register: rsyslogd_images
+  changed_when: False
+  check_mode: no
+
+- name: Pull rsyslogd all images
+  docker_image:
+    name: "{{ item }}"
+  with_items: "{{ rsyslogd_images.stdout_lines }}"
+
+- name: Create rsyslogd logs directory
+  file:
+    path: /var/lib/docker/volumes/rsyslogd_log/_data/docker
+    state: directory
+    mode: 0700
+
+- name: Add symlink for log dir
+  file:
+    src: /var/lib/docker/volumes/rsyslogd_log/_data/docker
+    dest: /var/log/docker
+    state: link
+
+- name: Copy rsyslog.conf
+  copy: src=etc/rsyslog.conf dest=/var/lib/docker/volumes/rsyslogd_cfg/_data/ owner=root group=root mode=644
+  notify: docker_service_restart_rsyslogd
+
+- name: Copy site rsyslog.d configs
+  synchronize: archive=no recursive=yes checksum=yes src=etc/rsyslog.d/ dest=/var/lib/docker/volumes/rsyslogd_cfg/_data/rsyslog.d 
+  notify: docker_service_restart_rsyslogd
+
+- name: Set owner and permittions rsyslog.d configs
+  file: path=/var/lib/docker/volumes/rsyslogd_cfg/_data/rsyslog.d state=directory recurse=true owner=root group=root mode=644
+  notify: docker_service_restart_rsyslogd 
+
+- name: Enable logrotate docker containers
+  template: src=etc/logrotate.d/docker-containers.j2 dest=/etc/logrotate.d/docker-containers owner=root group=root mode=644
+
+- name: Change logrotate cron to hourly
+  copy: src=etc/cron.hourly/logrotate dest=/etc/cron.hourly/logrotate owner=root group=root mode=755
+
+- name: Remove logrotate daily cron 
+  file: state=absent path=/etc/cron.daily/logrotate
+
+- name: Deploy rsyslogd docker project
+  docker_service:
+    pull: yes
+    project_name: rsyslogd
+    project_src: "{{ rsyslogd_compose_path }}"

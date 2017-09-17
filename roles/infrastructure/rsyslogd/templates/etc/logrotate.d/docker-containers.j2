@@ -1,0 +1,17 @@
+/var/lib/docker/volumes/rsyslogd_log/_data/messages /var/lib/docker/volumes/rsyslogd_log/_data/docker/*/*.log {
+    rotate {{ logrotate_rotate }}
+    maxsize {{ logrotate_maxsize }}
+    dateext
+    dateformat -%Y-%m-%d.%s
+    daily
+    compress
+{% if logrotate_delaycompress %}
+    delaycompress
+{% endif %}
+    missingok
+    notifempty
+    sharedscripts
+    postrotate
+        docker exec -t rsyslogd /bin/kill -HUP 1 2> /dev/null || true
+    endscript
+}

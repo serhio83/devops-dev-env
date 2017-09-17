@@ -1,0 +1,3 @@
+---
+- name: docker_service_restart_rsyslogd
+  shell: docker restart rsyslogd

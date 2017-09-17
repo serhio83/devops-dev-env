@@ -14,6 +14,7 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.network "private_network", ip: "10.10.10.5"
+  config.vm.network "forwarded_port", guest: 8000, host: 8000
 
   config.vm.provision "shell" do |s|
     ssh_pub_key = File.readlines("#{Dir.home}/.ssh/id_rsa.pub").first.strip
