@@ -1,0 +1,43 @@
+---
+- name: Create ZFS filesystem for gocd godata
+  zfs:
+    name: "{{ docker_zfs_pool_name }}/{{ gocd_docker_godata_volume_name }}"
+    state: present
+    mountpoint: "/var/lib/docker/volumes/{{ gocd_docker_godata_volume_name }}"
+    compression: lz4
+
+- name: Create ZFS filesystem for gocd gohome
+  zfs:
+    name: "{{ docker_zfs_pool_name }}/{{ gocd_docker_gohome_volume_name }}"
+    state: present
+    mountpoint: "/var/lib/docker/volumes/{{ gocd_docker_gohome_volume_name }}"
+    compression: lz4
+
+- name: Check if volume "{{ gocd_docker_godata_volume_name }}" exists
+  command: docker volume inspect "{{ gocd_docker_godata_volume_name }}"
+  register: volume_exists
+  failed_when: false
+  changed_when: False
+
+- name: Create volume "{{ gocd_docker_godata_volume_name }}"
+  command: docker volume create --name "{{ gocd_docker_godata_volume_name }}"
+  when: volume_exists|failed
+
+- name: Check if volume "{{ gocd_docker_gohome_volume_name }}" exists
+  command: docker volume inspect "{{ gocd_docker_gohome_volume_name }}"
+  register: volume_exists
+  failed_when: false
+  changed_when: False
+
+- name: Create volume "{{ gocd_docker_gohome_volume_name }}"
+  command: docker volume create --name "{{ gocd_docker_gohome_volume_name }}"
+  when: volume_exists|failed
+
+- name: Create compose dir for gocd if not exist
+  file:
+    path: "{{ gocd_docker_compose_path }}"
+    state: directory
+    mode: 0755
+
+- name: Copy gocd compose file
+  template: src=docker-compose.yml.j2 dest={{ gocd_docker_compose_path }}/docker-compose.yml owner=root group=root mode=755

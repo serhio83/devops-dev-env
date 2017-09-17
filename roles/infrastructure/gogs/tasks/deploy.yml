@@ -1,4 +1,6 @@
 ---
+- name: Create initial gogs database
+  command: docker exec -i postgres /backups/initial_data_loader.sh
 
 - name: Deploy gogs docker project
   docker_service:

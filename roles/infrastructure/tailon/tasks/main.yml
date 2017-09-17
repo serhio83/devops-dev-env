@@ -1,0 +1,22 @@
+---
+- block:
+  - name: Install tailon pip package
+    pip:
+      name: tailon
+
+  - name: Install systemd service file
+    copy: 
+      src: tailon.service
+      dest: /etc/systemd/system/tailon.service 
+      owner: root
+      group: root
+      mode: 0644
+
+  - name: Enable service and start
+    service:
+      name: tailon
+      state: started
+      enabled: yes
+      daemon_reload: yes
+  tags:
+    - initial

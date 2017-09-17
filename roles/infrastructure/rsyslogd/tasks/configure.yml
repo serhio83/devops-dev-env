@@ -1,12 +1,32 @@
 ---
-- name: Check if volume "{{ rsyslogd_docker_volume_name }}" exists
-  command: docker volume inspect "{{ rsyslogd_docker_volume_name }}"
+- name: Create ZFS filesystem for rsyslogd cfg
+  zfs:
+    name: "{{ docker_zfs_pool_name }}/{{ rsyslogd_docker_volume_cfg_name }}"
+    state: present
+    mountpoint: "/var/lib/docker/volumes/{{ rsyslogd_docker_volume_cfg_name }}"
+    compression: lz4
+    atime: off
+    recordsize: 8k
+    primarycache: all
+
+- name: Create ZFS filesystem for rsyslogd log
+  zfs:
+    name: "{{ docker_zfs_pool_name }}/{{ rsyslogd_docker_volume_log_name }}"
+    state: present
+    mountpoint: "/var/lib/docker/volumes/{{ rsyslogd_docker_volume_log_name }}"
+    compression: lz4
+    atime: off
+    recordsize: 8k
+    primarycache: all
+
+- name: Check if volume "{{ rsyslogd_docker_volume_cfg_name }}" exists
+  command: docker volume inspect "{{ rsyslogd_docker_volume_cfg_name }}"
   register: volume_exists
   failed_when: false
   changed_when: False
 
-- name: Create volume "{{ rsyslogd_docker_volume_name }}"
-  command: docker volume create --name "{{ rsyslogd_docker_volume_name }}"
+- name: Create volume "{{ rsyslogd_docker_volume_cfg_name }}"
+  command: docker volume create --name "{{ rsyslogd_docker_volume_cfg_name }}"
   when: volume_exists|failed
 
 - name: Create compose dir rsyslogd if not exist
@@ -31,22 +51,22 @@
 
 - name: Create rsyslogd logs directory
   file:
-    path: /var/lib/docker/volumes/rsyslogd_log/_data/docker
+    path: "{{ rsyslogd_zfs_log_path }}/_data/docker"
     state: directory
     mode: 0700
 
 - name: Add symlink for log dir
   file:
-    src: /var/lib/docker/volumes/rsyslogd_log/_data/docker
+    src: "{{ rsyslogd_zfs_log_path }}/_data/docker"
     dest: /var/log/docker
     state: link
 
 - name: Copy rsyslog.conf
-  copy: src=etc/rsyslog.conf dest=/var/lib/docker/volumes/rsyslogd_cfg/_data/ owner=root group=root mode=644
+  copy: src=etc/rsyslog.conf dest="{{ rsyslogd_zfs_cfg_path }}/_data/" owner=root group=root mode=644
   notify: docker_service_restart_rsyslogd
 
 - name: Copy site rsyslog.d configs
-  synchronize: archive=no recursive=yes checksum=yes src=etc/rsyslog.d/ dest=/var/lib/docker/volumes/rsyslogd_cfg/_data/rsyslog.d 
+  synchronize: archive=no recursive=yes checksum=yes src=etc/rsyslog.d/ dest="{{ rsyslogd_zfs_cfg_path }}/_data/rsyslog.d" 
   notify: docker_service_restart_rsyslogd
 
 - name: Set owner and permittions rsyslog.d configs

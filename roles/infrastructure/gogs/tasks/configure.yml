@@ -1,4 +1,10 @@
 ---
+- name: Create ZFS filesystem for gogs data
+  zfs:
+    name: "{{ docker_zfs_pool_name }}/{{ gogs_docker_volume_name }}"
+    state: present
+    mountpoint: "/var/lib/docker/volumes/{{ gogs_docker_volume_name }}"
+    compression: lz4
 
 - name: Check if volume "{{ gogs_docker_volume_name }}" exists
   command: docker volume inspect "{{ gogs_docker_volume_name }}"
@@ -16,5 +22,25 @@
     state: directory
     mode: 0755
 
-- name: Copy rsyslogd compose file
+- name: Create gogs app config directory if not exist
+  file:
+    path: "{{ gogs_docker_volume_path }}/_data/gogs/conf"
+    state: directory
+    mode: 0755
+
+- name: Copy gogs app.ini file
+  template: src=app.ini.j2 dest={{ gogs_docker_volume_path }}/_data/gogs/conf/app.ini owner=root group=root mode=755
+
+- name: Copy gogs compose file
   template: src=docker-compose.yml.j2 dest={{ gogs_docker_compose_path }}/docker-compose.yml owner=root group=root mode=755
+
+- name: Copy gogs initial database
+  copy:
+    src: initial_gogs_db_psql.sql
+    dest: "/var/lib/docker/volumes/{{ postgres_backup_docker_volume_name }}/_data/"
+
+- name: Copy gogs initial data loader
+  copy:
+    src: initial_data_loader.sh
+    dest: "/var/lib/docker/volumes/{{ postgres_backup_docker_volume_name }}/_data/"
+    mode: 0755

@@ -10,16 +10,19 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - data:/var/lib/postgresql/data
-      - backup:/backup
+      - wal:/var/lib/postgres/data/pg_xlog
+      - backups:/backups
     ports:
       - "5432:5432"
     restart: always
+    mem_limit: 1024M
     networks:
       - stratus_default
 
 volumes:
   data: {}
-  backup: {}
+  backups: {}
+  wal: {}
 
 networks:
   stratus_default:

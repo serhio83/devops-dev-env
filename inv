@@ -1,2 +1,5 @@
-[getcloud]
+[prod]
+vm1.getcloud.io ansible_host=188.188.188.188 ansible_connection=ssh ansible_port=22 ansible_user=root ansible_python_interpreter=/usr/bin/python3
+
+[devel]
 vm1.getcloud.io ansible_host=127.0.0.1 ansible_connection=ssh ansible_port=2222 ansible_user=root ansible_python_interpreter=/usr/bin/python3

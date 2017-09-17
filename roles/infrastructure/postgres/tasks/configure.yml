@@ -1,4 +1,33 @@
 ---
+- name: Create ZFS filesystem for postgres data
+  zfs:
+    name: "{{ docker_zfs_pool_name }}/{{ postgres_data_docker_volume_name }}"
+    state: present
+    mountpoint: "/var/lib/docker/volumes/{{ postgres_data_docker_volume_name }}"
+    compression: lz4
+    atime: off
+    recordsize: 16k
+    primarycache: all
+
+- name: Create ZFS filesystem for postgres backups
+  zfs:
+    name: "{{ docker_zfs_pool_name }}/{{ postgres_backup_docker_volume_name }}"
+    state: present
+    mountpoint: "/var/lib/docker/volumes/{{ postgres_backup_docker_volume_name }}"
+    compression: gzip
+    atime: off
+    recordsize: 16k
+    primarycache: all
+
+- name: Create ZFS filesystem for postgres WAL
+  zfs:
+    name: "{{ docker_zfs_pool_name }}/{{ postgres_wal_docker_volume_name }}"
+    state: present
+    mountpoint: "/var/lib/docker/volumes/{{ postgres_wal_docker_volume_name }}"
+    compression: lz4
+    atime: off
+    recordsize: 128k
+    primarycache: all
 
 - name: Check if volume "{{ postgres_data_docker_volume_name }}" exists
   command: docker volume inspect "{{ postgres_data_docker_volume_name }}"

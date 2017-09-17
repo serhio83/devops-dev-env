@@ -2,4 +2,5 @@
 
 postgres_docker_compose_path: /opt/docker-compose/infrastructure/postgres
 postgres_data_docker_volume_name: 'postgres_data'
-postgres_backup_docker_volume_name: 'postgres_backup'
+postgres_backup_docker_volume_name: 'postgres_backups'
+postgres_wal_docker_volume_name: 'postgres_wal'

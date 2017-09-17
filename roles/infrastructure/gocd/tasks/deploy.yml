@@ -1,0 +1,6 @@
+---
+- name: Deploy gocd docker project
+  docker_service:
+    pull: yes
+    project_name: gocd
+    project_src: "{{ gocd_docker_compose_path }}"

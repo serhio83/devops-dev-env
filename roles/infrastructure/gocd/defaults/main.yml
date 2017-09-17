@@ -1,0 +1,7 @@
+---
+gocd_ver: v17.9.0
+gocd_docker_compose_path: /opt/docker-compose/infrastructure/gocd
+gocd_docker_godata_volume_path: /var/lib/docker/volumes/gocd_godata
+gocd_docker_gohome_volume_path: /var/lib/docker/volumes/gocd_gohome
+gocd_docker_godata_volume_name: 'gocd_godata'
+gocd_docker_gohome_volume_name: 'gocd_gohome'

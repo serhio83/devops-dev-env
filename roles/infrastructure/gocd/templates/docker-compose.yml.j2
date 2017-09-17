@@ -2,19 +2,22 @@ version: '2'
 
 services:
   gogs:
-    container_name: gogs
-    image: gogs/gogs
+    container_name: gocd
+    image: gocd/gocd-server:{{ gocd_ver }}
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - data:/data
+      - godata:/godata
+      - gohome:/home/go
     ports:
-      - "3000:3000"
+      - "8153:8153"
+      - "8154:8154"
     restart: always
     networks:
       - stratus_default
 
 volumes:
-  data: {}
+  godata: {}
+  gohome: {}
 
 networks:
   stratus_default:

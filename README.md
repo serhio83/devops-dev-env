@@ -1,5 +1,13 @@
 # Ansible configuration
 
+## Roles implemented:
+* common-server
+* docker-host
+* rsyslogd
+* postgres
+* gogs with postgres db
+* gocd
+
 ## Recuirements:
 ### Devel local
 
@@ -9,7 +17,7 @@
 
 ## production deploy
 
-to be continued with jenkins... blackjack & whores...
+to be continued with gocd... blackjack & whores...
 
 ## developement deploy
 Recreate new virtual machine

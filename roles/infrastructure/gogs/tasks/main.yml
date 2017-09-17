@@ -2,8 +2,9 @@
 
 - include: configure.yml
   tags:
+    - initial
     - configure
 
 - include: deploy.yml
   tags:
-    - deploy
+    - gogs_deploy

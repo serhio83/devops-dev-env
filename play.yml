@@ -8,3 +8,5 @@
     - infrastructure/rsyslogd
     - infrastructure/postgres
     - infrastructure/gogs
+    - infrastructure/gocd
+    - infrastructure/tailon

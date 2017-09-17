@@ -10,6 +10,11 @@
   apt:
     update_cache: yes
 
+- name: Copy zfs.conf to modprobe.d
+  copy:
+    src: etc/modprobe.d/zfs.conf
+    dest: /etc/modprobe.d/zfs.conf
+
 - name: ZFS install
   apt: name={{ item }} state=latest
   with_items:
@@ -48,6 +53,9 @@
 
 - name: Install dockers-compose package
   pip: name=docker-compose version={{ docker_compose_version }}  state=present
+
+- name: Install psycopg2 package
+  pip: name=psycopg2 version={{ psycopg2_version }}  state=present
 
 - name: Create default stratus network
   docker_network:

@@ -1,0 +1,48 @@
+APP_NAME = stratus git
+RUN_USER = git
+RUN_MODE = prod
+
+[database]
+DB_TYPE  = postgres
+HOST     = postgres:5432
+NAME     = {{ gogs_postgres_database }}
+USER     = {{ gogs_postgres_user }}
+PASSWD   = {{ gogs_postgres_password }}
+SSL_MODE = disable
+
+[repository]
+ROOT = /data/git/gogs-repositories
+
+[server]
+DOMAIN           = {{ gogs_domain }}
+HTTP_PORT        = {{ gogs_http_port }}
+ROOT_URL         = http://{{ gogs_domain }}:{{ gogs_http_port }}/
+DISABLE_SSH      = false
+SSH_PORT         = {{ gogs_ssh_port }}
+START_SSH_SERVER = true
+OFFLINE_MODE     = false
+
+[mailer]
+ENABLED = false
+
+[service]
+REGISTER_EMAIL_CONFIRM = false
+ENABLE_NOTIFY_MAIL     = false
+DISABLE_REGISTRATION   = false
+ENABLE_CAPTCHA         = true
+REQUIRE_SIGNIN_VIEW    = true
+
+[picture]
+DISABLE_GRAVATAR        = false
+ENABLE_FEDERATED_AVATAR = true
+
+[session]
+PROVIDER = file
+
+[log]
+MODE      = console
+LEVEL     = Info
+
+[security]
+INSTALL_LOCK = true
+SECRET_KEY   = 2GQtJOcBAFFCSog

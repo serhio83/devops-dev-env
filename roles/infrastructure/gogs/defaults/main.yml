@@ -1,4 +1,11 @@
 ---
 
 gogs_docker_compose_path: /opt/docker-compose/infrastructure/gogs
+gogs_docker_volume_path: /var/lib/docker/volumes/gogs_data
 gogs_docker_volume_name: 'gogs_data'
+gogs_postgres_database: 'gogs'
+gogs_postgres_user: "{{ postgres_user }}"
+gogs_postgres_password: "{{ postgres_password }}"
+gogs_domain: 'git.getcloud.io'
+gogs_http_port: '3000'
+gogs_ssh_port: '2222'

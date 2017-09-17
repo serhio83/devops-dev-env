@@ -1,4 +1,7 @@
 ---
 # vars file for rsyslog
 rsyslogd_compose_path: /opt/docker-compose/infrastructure/rsyslogd 
-rsyslogd_docker_volume_name: 'rsyslogd_cfg'
+rsyslogd_docker_volume_cfg_name: 'rsyslogd_cfg'
+rsyslogd_docker_volume_log_name: 'rsyslogd_log'
+rsyslogd_zfs_cfg_path: /var/lib/docker/volumes/rsyslogd_cfg
+rsyslogd_zfs_log_path: /var/lib/docker/volumes/rsyslogd_log

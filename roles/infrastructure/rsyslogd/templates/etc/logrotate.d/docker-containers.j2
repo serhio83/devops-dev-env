@@ -1,4 +1,4 @@
-/var/lib/docker/volumes/rsyslogd_log/_data/messages /var/lib/docker/volumes/rsyslogd_log/_data/docker/*/*.log {
+{{ rsyslogd_zfs_log_path }}/_data/messages {{ rsyslogd_zfs_log_path }}/_data/docker/*/*.log {
     rotate {{ logrotate_rotate }}
     maxsize {{ logrotate_maxsize }}
     dateext
