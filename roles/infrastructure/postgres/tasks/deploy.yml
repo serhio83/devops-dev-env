@@ -1,0 +1,7 @@
+---
+
+- name: Deploy postgres docker project
+  docker_service:
+    pull: yes
+    project_name: postgres
+    project_src: "{{ postgres_docker_compose_path }}"

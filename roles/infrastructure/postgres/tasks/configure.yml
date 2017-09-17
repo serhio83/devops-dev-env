@@ -1,0 +1,30 @@
+---
+
+- name: Check if volume "{{ postgres_data_docker_volume_name }}" exists
+  command: docker volume inspect "{{ postgres_data_docker_volume_name }}"
+  register: volume_exists
+  failed_when: false
+  changed_when: False
+
+- name: Create volume "{{ postgres_data_docker_volume_name }}"
+  command: docker volume create --name "{{ postgres_data_docker_volume_name }}"
+  when: volume_exists|failed
+
+- name: Check if volume "{{ postgres_backup_docker_volume_name }}" exists
+  command: docker volume inspect "{{ postgres_backup_docker_volume_name }}"
+  register: volume_exists1
+  failed_when: false
+  changed_when: False
+
+- name: Create volume "{{ postgres_backup_docker_volume_name }}"
+  command: docker volume create --name "{{ postgres_backup_docker_volume_name }}"
+  when: volume_exists1|failed
+
+- name: Create compose dir postgres if not exist
+  file:
+    path: "{{ postgres_docker_compose_path }}"
+    state: directory
+    mode: 0755
+
+- name: Copy postgres compose file
+  template: src=docker-compose.yml.j2 dest={{ postgres_docker_compose_path }}/docker-compose.yml owner=root group=root mode=755

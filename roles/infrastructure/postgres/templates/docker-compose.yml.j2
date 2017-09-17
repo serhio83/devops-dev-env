@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  postgres:
+    container_name: postgres
+    image: serhio/postgres:9.5
+    environment:
+      - POSTGRES_USER={{ postgres_user }}
+      - POSTGRES_PASSWORD={{ postgres_password }}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - data:/var/lib/postgresql/data
+      - backup:/backup
+    ports:
+      - "5432:5432"
+    restart: always
+    networks:
+      - stratus_default
+
+volumes:
+  data: {}
+  backup: {}
+
+networks:
+  stratus_default:
+    external: true

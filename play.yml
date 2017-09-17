@@ -6,4 +6,5 @@
     - infrastructure/common-server
     - infrastructure/docker-host
     - infrastructure/rsyslogd
+    - infrastructure/postgres
     - infrastructure/gogs
