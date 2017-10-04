@@ -7,6 +7,7 @@
     - infrastructure/docker-host
     - infrastructure/rsyslogd
     - infrastructure/postgres
+    - infrastructure/prometheus
     - infrastructure/gogs
     - infrastructure/gocd
     - infrastructure/tailon

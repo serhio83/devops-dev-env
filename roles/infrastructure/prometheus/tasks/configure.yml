@@ -1,1 +1,52 @@
 ---
+- name: Create ZFS filesystem for "{{ prometheus_docker_volume_cfg_name }}" data
+  zfs:
+    name: "{{ docker_zfs_pool_name }}/{{ prometheus_docker_volume_cfg_name }}"
+    state: present
+    mountpoint: "/var/lib/docker/volumes/{{ prometheus_docker_volume_cfg_name }}"
+    compression: lz4
+
+- name: Create ZFS filesystem for "{{ prometheus_docker_volume_name }}" data
+  zfs:
+    name: "{{ docker_zfs_pool_name }}/{{ prometheus_docker_volume_name }}"
+    state: present
+    mountpoint: "/var/lib/docker/volumes/{{ prometheus_docker_volume_name }}"
+    compression: lz4
+
+- name: Check if docker volume "{{ prometheus_docker_volume_cfg_name }}" exists
+  command: docker volume inspect "{{ prometheus_docker_volume_cfg_name }}"
+  register: volume_exists
+  failed_when: false
+  changed_when: False
+
+- name: Create docker volume "{{ prometheus_docker_volume_cfg_name }}"
+  command: docker volume create --name "{{ prometheus_docker_volume_cfg_name }}"
+  when: volume_exists|failed
+
+- name: Check if docker volume "{{ prometheus_docker_volume_name }}" exists
+  command: docker volume inspect "{{ prometheus_docker_volume_name }}"
+  register: volume_exists
+  failed_when: false
+  changed_when: False
+
+- name: Create docker volume "{{ prometheus_docker_volume_name }}"
+  command: docker volume create --name "{{ prometheus_docker_volume_name }}"
+  when: volume_exists|failed
+
+- name: Create compose dir if not exist
+  file:
+    path: "{{ prometheus_docker_compose_path }}"
+    state: directory
+    mode: 0755
+
+- name: Create config directory if not exist
+  file:
+    path: "{{ prometheus_docker_volume_cfg_path }}/_data"
+    state: directory
+    mode: 0755
+
+- name: Copy prometheus config
+  template: src=prometheus.yml.j2 dest={{ prometheus_docker_volume_cfg_path }}/_data/prometheus.yml owner=root group=root mode=755
+
+- name: Copy prometheus compose file
+  template: src=docker-compose.yml.j2 dest={{ prometheus_docker_compose_path }}/docker-compose.yml owner=root group=root mode=755

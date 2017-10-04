@@ -34,7 +34,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: access; Type: TABLE; Schema: public; Owner: stratus
+-- Name: access; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE access (
@@ -45,10 +45,10 @@ CREATE TABLE access (
 );
 
 
-ALTER TABLE access OWNER TO stratus;
+ALTER TABLE access OWNER TO gogs;
 
 --
--- Name: access_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: access_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE access_id_seq
@@ -59,17 +59,17 @@ CREATE SEQUENCE access_id_seq
     CACHE 1;
 
 
-ALTER TABLE access_id_seq OWNER TO stratus;
+ALTER TABLE access_id_seq OWNER TO gogs;
 
 --
--- Name: access_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: access_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE access_id_seq OWNED BY access.id;
 
 
 --
--- Name: access_token; Type: TABLE; Schema: public; Owner: stratus
+-- Name: access_token; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE access_token (
@@ -82,10 +82,10 @@ CREATE TABLE access_token (
 );
 
 
-ALTER TABLE access_token OWNER TO stratus;
+ALTER TABLE access_token OWNER TO gogs;
 
 --
--- Name: access_token_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: access_token_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE access_token_id_seq
@@ -96,17 +96,17 @@ CREATE SEQUENCE access_token_id_seq
     CACHE 1;
 
 
-ALTER TABLE access_token_id_seq OWNER TO stratus;
+ALTER TABLE access_token_id_seq OWNER TO gogs;
 
 --
--- Name: access_token_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: access_token_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE access_token_id_seq OWNED BY access_token.id;
 
 
 --
--- Name: action; Type: TABLE; Schema: public; Owner: stratus
+-- Name: action; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE action (
@@ -125,10 +125,10 @@ CREATE TABLE action (
 );
 
 
-ALTER TABLE action OWNER TO stratus;
+ALTER TABLE action OWNER TO gogs;
 
 --
--- Name: action_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: action_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE action_id_seq
@@ -139,17 +139,17 @@ CREATE SEQUENCE action_id_seq
     CACHE 1;
 
 
-ALTER TABLE action_id_seq OWNER TO stratus;
+ALTER TABLE action_id_seq OWNER TO gogs;
 
 --
--- Name: action_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: action_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE action_id_seq OWNED BY action.id;
 
 
 --
--- Name: attachment; Type: TABLE; Schema: public; Owner: stratus
+-- Name: attachment; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE attachment (
@@ -163,10 +163,10 @@ CREATE TABLE attachment (
 );
 
 
-ALTER TABLE attachment OWNER TO stratus;
+ALTER TABLE attachment OWNER TO gogs;
 
 --
--- Name: attachment_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: attachment_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE attachment_id_seq
@@ -177,17 +177,17 @@ CREATE SEQUENCE attachment_id_seq
     CACHE 1;
 
 
-ALTER TABLE attachment_id_seq OWNER TO stratus;
+ALTER TABLE attachment_id_seq OWNER TO gogs;
 
 --
--- Name: attachment_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: attachment_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE attachment_id_seq OWNED BY attachment.id;
 
 
 --
--- Name: collaboration; Type: TABLE; Schema: public; Owner: stratus
+-- Name: collaboration; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE collaboration (
@@ -198,10 +198,10 @@ CREATE TABLE collaboration (
 );
 
 
-ALTER TABLE collaboration OWNER TO stratus;
+ALTER TABLE collaboration OWNER TO gogs;
 
 --
--- Name: collaboration_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: collaboration_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE collaboration_id_seq
@@ -212,17 +212,17 @@ CREATE SEQUENCE collaboration_id_seq
     CACHE 1;
 
 
-ALTER TABLE collaboration_id_seq OWNER TO stratus;
+ALTER TABLE collaboration_id_seq OWNER TO gogs;
 
 --
--- Name: collaboration_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: collaboration_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE collaboration_id_seq OWNED BY collaboration.id;
 
 
 --
--- Name: comment; Type: TABLE; Schema: public; Owner: stratus
+-- Name: comment; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE comment (
@@ -239,10 +239,10 @@ CREATE TABLE comment (
 );
 
 
-ALTER TABLE comment OWNER TO stratus;
+ALTER TABLE comment OWNER TO gogs;
 
 --
--- Name: comment_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: comment_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE comment_id_seq
@@ -253,17 +253,17 @@ CREATE SEQUENCE comment_id_seq
     CACHE 1;
 
 
-ALTER TABLE comment_id_seq OWNER TO stratus;
+ALTER TABLE comment_id_seq OWNER TO gogs;
 
 --
--- Name: comment_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: comment_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE comment_id_seq OWNED BY comment.id;
 
 
 --
--- Name: deploy_key; Type: TABLE; Schema: public; Owner: stratus
+-- Name: deploy_key; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE deploy_key (
@@ -277,10 +277,10 @@ CREATE TABLE deploy_key (
 );
 
 
-ALTER TABLE deploy_key OWNER TO stratus;
+ALTER TABLE deploy_key OWNER TO gogs;
 
 --
--- Name: deploy_key_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: deploy_key_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE deploy_key_id_seq
@@ -291,17 +291,17 @@ CREATE SEQUENCE deploy_key_id_seq
     CACHE 1;
 
 
-ALTER TABLE deploy_key_id_seq OWNER TO stratus;
+ALTER TABLE deploy_key_id_seq OWNER TO gogs;
 
 --
--- Name: deploy_key_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: deploy_key_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE deploy_key_id_seq OWNED BY deploy_key.id;
 
 
 --
--- Name: email_address; Type: TABLE; Schema: public; Owner: stratus
+-- Name: email_address; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE email_address (
@@ -312,10 +312,10 @@ CREATE TABLE email_address (
 );
 
 
-ALTER TABLE email_address OWNER TO stratus;
+ALTER TABLE email_address OWNER TO gogs;
 
 --
--- Name: email_address_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: email_address_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE email_address_id_seq
@@ -326,17 +326,17 @@ CREATE SEQUENCE email_address_id_seq
     CACHE 1;
 
 
-ALTER TABLE email_address_id_seq OWNER TO stratus;
+ALTER TABLE email_address_id_seq OWNER TO gogs;
 
 --
--- Name: email_address_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: email_address_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE email_address_id_seq OWNED BY email_address.id;
 
 
 --
--- Name: follow; Type: TABLE; Schema: public; Owner: stratus
+-- Name: follow; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE follow (
@@ -346,10 +346,10 @@ CREATE TABLE follow (
 );
 
 
-ALTER TABLE follow OWNER TO stratus;
+ALTER TABLE follow OWNER TO gogs;
 
 --
--- Name: follow_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: follow_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE follow_id_seq
@@ -360,17 +360,17 @@ CREATE SEQUENCE follow_id_seq
     CACHE 1;
 
 
-ALTER TABLE follow_id_seq OWNER TO stratus;
+ALTER TABLE follow_id_seq OWNER TO gogs;
 
 --
--- Name: follow_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: follow_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE follow_id_seq OWNED BY follow.id;
 
 
 --
--- Name: hook_task; Type: TABLE; Schema: public; Owner: stratus
+-- Name: hook_task; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE hook_task (
@@ -393,10 +393,10 @@ CREATE TABLE hook_task (
 );
 
 
-ALTER TABLE hook_task OWNER TO stratus;
+ALTER TABLE hook_task OWNER TO gogs;
 
 --
--- Name: hook_task_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: hook_task_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE hook_task_id_seq
@@ -407,17 +407,17 @@ CREATE SEQUENCE hook_task_id_seq
     CACHE 1;
 
 
-ALTER TABLE hook_task_id_seq OWNER TO stratus;
+ALTER TABLE hook_task_id_seq OWNER TO gogs;
 
 --
--- Name: hook_task_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: hook_task_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE hook_task_id_seq OWNED BY hook_task.id;
 
 
 --
--- Name: issue; Type: TABLE; Schema: public; Owner: stratus
+-- Name: issue; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE issue (
@@ -439,10 +439,10 @@ CREATE TABLE issue (
 );
 
 
-ALTER TABLE issue OWNER TO stratus;
+ALTER TABLE issue OWNER TO gogs;
 
 --
--- Name: issue_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: issue_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE issue_id_seq
@@ -453,17 +453,17 @@ CREATE SEQUENCE issue_id_seq
     CACHE 1;
 
 
-ALTER TABLE issue_id_seq OWNER TO stratus;
+ALTER TABLE issue_id_seq OWNER TO gogs;
 
 --
--- Name: issue_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: issue_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE issue_id_seq OWNED BY issue.id;
 
 
 --
--- Name: issue_label; Type: TABLE; Schema: public; Owner: stratus
+-- Name: issue_label; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE issue_label (
@@ -473,10 +473,10 @@ CREATE TABLE issue_label (
 );
 
 
-ALTER TABLE issue_label OWNER TO stratus;
+ALTER TABLE issue_label OWNER TO gogs;
 
 --
--- Name: issue_label_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: issue_label_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE issue_label_id_seq
@@ -487,17 +487,17 @@ CREATE SEQUENCE issue_label_id_seq
     CACHE 1;
 
 
-ALTER TABLE issue_label_id_seq OWNER TO stratus;
+ALTER TABLE issue_label_id_seq OWNER TO gogs;
 
 --
--- Name: issue_label_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: issue_label_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE issue_label_id_seq OWNED BY issue_label.id;
 
 
 --
--- Name: issue_user; Type: TABLE; Schema: public; Owner: stratus
+-- Name: issue_user; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE issue_user (
@@ -514,10 +514,10 @@ CREATE TABLE issue_user (
 );
 
 
-ALTER TABLE issue_user OWNER TO stratus;
+ALTER TABLE issue_user OWNER TO gogs;
 
 --
--- Name: issue_user_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: issue_user_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE issue_user_id_seq
@@ -528,17 +528,17 @@ CREATE SEQUENCE issue_user_id_seq
     CACHE 1;
 
 
-ALTER TABLE issue_user_id_seq OWNER TO stratus;
+ALTER TABLE issue_user_id_seq OWNER TO gogs;
 
 --
--- Name: issue_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: issue_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE issue_user_id_seq OWNED BY issue_user.id;
 
 
 --
--- Name: label; Type: TABLE; Schema: public; Owner: stratus
+-- Name: label; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE label (
@@ -551,10 +551,10 @@ CREATE TABLE label (
 );
 
 
-ALTER TABLE label OWNER TO stratus;
+ALTER TABLE label OWNER TO gogs;
 
 --
--- Name: label_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: label_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE label_id_seq
@@ -565,17 +565,17 @@ CREATE SEQUENCE label_id_seq
     CACHE 1;
 
 
-ALTER TABLE label_id_seq OWNER TO stratus;
+ALTER TABLE label_id_seq OWNER TO gogs;
 
 --
--- Name: label_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: label_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE label_id_seq OWNED BY label.id;
 
 
 --
--- Name: login_source; Type: TABLE; Schema: public; Owner: stratus
+-- Name: login_source; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE login_source (
@@ -589,10 +589,10 @@ CREATE TABLE login_source (
 );
 
 
-ALTER TABLE login_source OWNER TO stratus;
+ALTER TABLE login_source OWNER TO gogs;
 
 --
--- Name: login_source_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: login_source_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE login_source_id_seq
@@ -603,17 +603,17 @@ CREATE SEQUENCE login_source_id_seq
     CACHE 1;
 
 
-ALTER TABLE login_source_id_seq OWNER TO stratus;
+ALTER TABLE login_source_id_seq OWNER TO gogs;
 
 --
--- Name: login_source_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: login_source_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE login_source_id_seq OWNED BY login_source.id;
 
 
 --
--- Name: milestone; Type: TABLE; Schema: public; Owner: stratus
+-- Name: milestone; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE milestone (
@@ -630,10 +630,10 @@ CREATE TABLE milestone (
 );
 
 
-ALTER TABLE milestone OWNER TO stratus;
+ALTER TABLE milestone OWNER TO gogs;
 
 --
--- Name: milestone_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: milestone_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE milestone_id_seq
@@ -644,17 +644,17 @@ CREATE SEQUENCE milestone_id_seq
     CACHE 1;
 
 
-ALTER TABLE milestone_id_seq OWNER TO stratus;
+ALTER TABLE milestone_id_seq OWNER TO gogs;
 
 --
--- Name: milestone_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: milestone_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE milestone_id_seq OWNED BY milestone.id;
 
 
 --
--- Name: mirror; Type: TABLE; Schema: public; Owner: stratus
+-- Name: mirror; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE mirror (
@@ -667,10 +667,10 @@ CREATE TABLE mirror (
 );
 
 
-ALTER TABLE mirror OWNER TO stratus;
+ALTER TABLE mirror OWNER TO gogs;
 
 --
--- Name: mirror_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: mirror_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE mirror_id_seq
@@ -681,17 +681,17 @@ CREATE SEQUENCE mirror_id_seq
     CACHE 1;
 
 
-ALTER TABLE mirror_id_seq OWNER TO stratus;
+ALTER TABLE mirror_id_seq OWNER TO gogs;
 
 --
--- Name: mirror_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: mirror_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE mirror_id_seq OWNED BY mirror.id;
 
 
 --
--- Name: notice; Type: TABLE; Schema: public; Owner: stratus
+-- Name: notice; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE notice (
@@ -702,10 +702,10 @@ CREATE TABLE notice (
 );
 
 
-ALTER TABLE notice OWNER TO stratus;
+ALTER TABLE notice OWNER TO gogs;
 
 --
--- Name: notice_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: notice_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE notice_id_seq
@@ -716,17 +716,17 @@ CREATE SEQUENCE notice_id_seq
     CACHE 1;
 
 
-ALTER TABLE notice_id_seq OWNER TO stratus;
+ALTER TABLE notice_id_seq OWNER TO gogs;
 
 --
--- Name: notice_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: notice_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE notice_id_seq OWNED BY notice.id;
 
 
 --
--- Name: org_user; Type: TABLE; Schema: public; Owner: stratus
+-- Name: org_user; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE org_user (
@@ -739,10 +739,10 @@ CREATE TABLE org_user (
 );
 
 
-ALTER TABLE org_user OWNER TO stratus;
+ALTER TABLE org_user OWNER TO gogs;
 
 --
--- Name: org_user_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: org_user_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE org_user_id_seq
@@ -753,17 +753,17 @@ CREATE SEQUENCE org_user_id_seq
     CACHE 1;
 
 
-ALTER TABLE org_user_id_seq OWNER TO stratus;
+ALTER TABLE org_user_id_seq OWNER TO gogs;
 
 --
--- Name: org_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: org_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE org_user_id_seq OWNED BY org_user.id;
 
 
 --
--- Name: protect_branch; Type: TABLE; Schema: public; Owner: stratus
+-- Name: protect_branch; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE protect_branch (
@@ -778,10 +778,10 @@ CREATE TABLE protect_branch (
 );
 
 
-ALTER TABLE protect_branch OWNER TO stratus;
+ALTER TABLE protect_branch OWNER TO gogs;
 
 --
--- Name: protect_branch_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: protect_branch_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE protect_branch_id_seq
@@ -792,17 +792,17 @@ CREATE SEQUENCE protect_branch_id_seq
     CACHE 1;
 
 
-ALTER TABLE protect_branch_id_seq OWNER TO stratus;
+ALTER TABLE protect_branch_id_seq OWNER TO gogs;
 
 --
--- Name: protect_branch_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: protect_branch_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE protect_branch_id_seq OWNED BY protect_branch.id;
 
 
 --
--- Name: protect_branch_whitelist; Type: TABLE; Schema: public; Owner: stratus
+-- Name: protect_branch_whitelist; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE protect_branch_whitelist (
@@ -814,10 +814,10 @@ CREATE TABLE protect_branch_whitelist (
 );
 
 
-ALTER TABLE protect_branch_whitelist OWNER TO stratus;
+ALTER TABLE protect_branch_whitelist OWNER TO gogs;
 
 --
--- Name: protect_branch_whitelist_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: protect_branch_whitelist_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE protect_branch_whitelist_id_seq
@@ -828,17 +828,17 @@ CREATE SEQUENCE protect_branch_whitelist_id_seq
     CACHE 1;
 
 
-ALTER TABLE protect_branch_whitelist_id_seq OWNER TO stratus;
+ALTER TABLE protect_branch_whitelist_id_seq OWNER TO gogs;
 
 --
--- Name: protect_branch_whitelist_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: protect_branch_whitelist_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE protect_branch_whitelist_id_seq OWNED BY protect_branch_whitelist.id;
 
 
 --
--- Name: public_key; Type: TABLE; Schema: public; Owner: stratus
+-- Name: public_key; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE public_key (
@@ -854,10 +854,10 @@ CREATE TABLE public_key (
 );
 
 
-ALTER TABLE public_key OWNER TO stratus;
+ALTER TABLE public_key OWNER TO gogs;
 
 --
--- Name: public_key_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: public_key_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE public_key_id_seq
@@ -868,17 +868,17 @@ CREATE SEQUENCE public_key_id_seq
     CACHE 1;
 
 
-ALTER TABLE public_key_id_seq OWNER TO stratus;
+ALTER TABLE public_key_id_seq OWNER TO gogs;
 
 --
--- Name: public_key_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: public_key_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE public_key_id_seq OWNED BY public_key.id;
 
 
 --
--- Name: pull_request; Type: TABLE; Schema: public; Owner: stratus
+-- Name: pull_request; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE pull_request (
@@ -900,10 +900,10 @@ CREATE TABLE pull_request (
 );
 
 
-ALTER TABLE pull_request OWNER TO stratus;
+ALTER TABLE pull_request OWNER TO gogs;
 
 --
--- Name: pull_request_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: pull_request_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE pull_request_id_seq
@@ -914,17 +914,17 @@ CREATE SEQUENCE pull_request_id_seq
     CACHE 1;
 
 
-ALTER TABLE pull_request_id_seq OWNER TO stratus;
+ALTER TABLE pull_request_id_seq OWNER TO gogs;
 
 --
--- Name: pull_request_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: pull_request_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE pull_request_id_seq OWNED BY pull_request.id;
 
 
 --
--- Name: release; Type: TABLE; Schema: public; Owner: stratus
+-- Name: release; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE release (
@@ -944,10 +944,10 @@ CREATE TABLE release (
 );
 
 
-ALTER TABLE release OWNER TO stratus;
+ALTER TABLE release OWNER TO gogs;
 
 --
--- Name: release_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: release_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE release_id_seq
@@ -958,17 +958,17 @@ CREATE SEQUENCE release_id_seq
     CACHE 1;
 
 
-ALTER TABLE release_id_seq OWNER TO stratus;
+ALTER TABLE release_id_seq OWNER TO gogs;
 
 --
--- Name: release_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: release_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE release_id_seq OWNED BY release.id;
 
 
 --
--- Name: repository; Type: TABLE; Schema: public; Owner: stratus
+-- Name: repository; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE repository (
@@ -1010,10 +1010,10 @@ CREATE TABLE repository (
 );
 
 
-ALTER TABLE repository OWNER TO stratus;
+ALTER TABLE repository OWNER TO gogs;
 
 --
--- Name: repository_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: repository_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE repository_id_seq
@@ -1024,17 +1024,17 @@ CREATE SEQUENCE repository_id_seq
     CACHE 1;
 
 
-ALTER TABLE repository_id_seq OWNER TO stratus;
+ALTER TABLE repository_id_seq OWNER TO gogs;
 
 --
--- Name: repository_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: repository_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE repository_id_seq OWNED BY repository.id;
 
 
 --
--- Name: star; Type: TABLE; Schema: public; Owner: stratus
+-- Name: star; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE star (
@@ -1044,10 +1044,10 @@ CREATE TABLE star (
 );
 
 
-ALTER TABLE star OWNER TO stratus;
+ALTER TABLE star OWNER TO gogs;
 
 --
--- Name: star_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: star_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE star_id_seq
@@ -1058,17 +1058,17 @@ CREATE SEQUENCE star_id_seq
     CACHE 1;
 
 
-ALTER TABLE star_id_seq OWNER TO stratus;
+ALTER TABLE star_id_seq OWNER TO gogs;
 
 --
--- Name: star_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: star_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE star_id_seq OWNED BY star.id;
 
 
 --
--- Name: team; Type: TABLE; Schema: public; Owner: stratus
+-- Name: team; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE team (
@@ -1083,10 +1083,10 @@ CREATE TABLE team (
 );
 
 
-ALTER TABLE team OWNER TO stratus;
+ALTER TABLE team OWNER TO gogs;
 
 --
--- Name: team_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: team_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE team_id_seq
@@ -1097,17 +1097,17 @@ CREATE SEQUENCE team_id_seq
     CACHE 1;
 
 
-ALTER TABLE team_id_seq OWNER TO stratus;
+ALTER TABLE team_id_seq OWNER TO gogs;
 
 --
--- Name: team_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: team_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE team_id_seq OWNED BY team.id;
 
 
 --
--- Name: team_repo; Type: TABLE; Schema: public; Owner: stratus
+-- Name: team_repo; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE team_repo (
@@ -1118,10 +1118,10 @@ CREATE TABLE team_repo (
 );
 
 
-ALTER TABLE team_repo OWNER TO stratus;
+ALTER TABLE team_repo OWNER TO gogs;
 
 --
--- Name: team_repo_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: team_repo_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE team_repo_id_seq
@@ -1132,17 +1132,17 @@ CREATE SEQUENCE team_repo_id_seq
     CACHE 1;
 
 
-ALTER TABLE team_repo_id_seq OWNER TO stratus;
+ALTER TABLE team_repo_id_seq OWNER TO gogs;
 
 --
--- Name: team_repo_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: team_repo_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE team_repo_id_seq OWNED BY team_repo.id;
 
 
 --
--- Name: team_user; Type: TABLE; Schema: public; Owner: stratus
+-- Name: team_user; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE team_user (
@@ -1153,10 +1153,10 @@ CREATE TABLE team_user (
 );
 
 
-ALTER TABLE team_user OWNER TO stratus;
+ALTER TABLE team_user OWNER TO gogs;
 
 --
--- Name: team_user_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: team_user_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE team_user_id_seq
@@ -1167,17 +1167,17 @@ CREATE SEQUENCE team_user_id_seq
     CACHE 1;
 
 
-ALTER TABLE team_user_id_seq OWNER TO stratus;
+ALTER TABLE team_user_id_seq OWNER TO gogs;
 
 --
--- Name: team_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: team_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE team_user_id_seq OWNED BY team_user.id;
 
 
 --
--- Name: two_factor; Type: TABLE; Schema: public; Owner: stratus
+-- Name: two_factor; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE two_factor (
@@ -1188,10 +1188,10 @@ CREATE TABLE two_factor (
 );
 
 
-ALTER TABLE two_factor OWNER TO stratus;
+ALTER TABLE two_factor OWNER TO gogs;
 
 --
--- Name: two_factor_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: two_factor_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE two_factor_id_seq
@@ -1202,17 +1202,17 @@ CREATE SEQUENCE two_factor_id_seq
     CACHE 1;
 
 
-ALTER TABLE two_factor_id_seq OWNER TO stratus;
+ALTER TABLE two_factor_id_seq OWNER TO gogs;
 
 --
--- Name: two_factor_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: two_factor_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE two_factor_id_seq OWNED BY two_factor.id;
 
 
 --
--- Name: two_factor_recovery_code; Type: TABLE; Schema: public; Owner: stratus
+-- Name: two_factor_recovery_code; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE two_factor_recovery_code (
@@ -1223,10 +1223,10 @@ CREATE TABLE two_factor_recovery_code (
 );
 
 
-ALTER TABLE two_factor_recovery_code OWNER TO stratus;
+ALTER TABLE two_factor_recovery_code OWNER TO gogs;
 
 --
--- Name: two_factor_recovery_code_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: two_factor_recovery_code_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE two_factor_recovery_code_id_seq
@@ -1237,17 +1237,17 @@ CREATE SEQUENCE two_factor_recovery_code_id_seq
     CACHE 1;
 
 
-ALTER TABLE two_factor_recovery_code_id_seq OWNER TO stratus;
+ALTER TABLE two_factor_recovery_code_id_seq OWNER TO gogs;
 
 --
--- Name: two_factor_recovery_code_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: two_factor_recovery_code_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE two_factor_recovery_code_id_seq OWNED BY two_factor_recovery_code.id;
 
 
 --
--- Name: upload; Type: TABLE; Schema: public; Owner: stratus
+-- Name: upload; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE upload (
@@ -1257,10 +1257,10 @@ CREATE TABLE upload (
 );
 
 
-ALTER TABLE upload OWNER TO stratus;
+ALTER TABLE upload OWNER TO gogs;
 
 --
--- Name: upload_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: upload_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE upload_id_seq
@@ -1271,17 +1271,17 @@ CREATE SEQUENCE upload_id_seq
     CACHE 1;
 
 
-ALTER TABLE upload_id_seq OWNER TO stratus;
+ALTER TABLE upload_id_seq OWNER TO gogs;
 
 --
--- Name: upload_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: upload_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE upload_id_seq OWNED BY upload.id;
 
 
 --
--- Name: user; Type: TABLE; Schema: public; Owner: stratus
+-- Name: user; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE "user" (
@@ -1321,10 +1321,10 @@ CREATE TABLE "user" (
 );
 
 
-ALTER TABLE "user" OWNER TO stratus;
+ALTER TABLE "user" OWNER TO gogs;
 
 --
--- Name: user_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: user_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE user_id_seq
@@ -1335,17 +1335,17 @@ CREATE SEQUENCE user_id_seq
     CACHE 1;
 
 
-ALTER TABLE user_id_seq OWNER TO stratus;
+ALTER TABLE user_id_seq OWNER TO gogs;
 
 --
--- Name: user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE user_id_seq OWNED BY "user".id;
 
 
 --
--- Name: version; Type: TABLE; Schema: public; Owner: stratus
+-- Name: version; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE version (
@@ -1354,10 +1354,10 @@ CREATE TABLE version (
 );
 
 
-ALTER TABLE version OWNER TO stratus;
+ALTER TABLE version OWNER TO gogs;
 
 --
--- Name: version_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: version_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE version_id_seq
@@ -1368,17 +1368,17 @@ CREATE SEQUENCE version_id_seq
     CACHE 1;
 
 
-ALTER TABLE version_id_seq OWNER TO stratus;
+ALTER TABLE version_id_seq OWNER TO gogs;
 
 --
--- Name: version_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: version_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE version_id_seq OWNED BY version.id;
 
 
 --
--- Name: watch; Type: TABLE; Schema: public; Owner: stratus
+-- Name: watch; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE watch (
@@ -1388,10 +1388,10 @@ CREATE TABLE watch (
 );
 
 
-ALTER TABLE watch OWNER TO stratus;
+ALTER TABLE watch OWNER TO gogs;
 
 --
--- Name: watch_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: watch_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE watch_id_seq
@@ -1402,17 +1402,17 @@ CREATE SEQUENCE watch_id_seq
     CACHE 1;
 
 
-ALTER TABLE watch_id_seq OWNER TO stratus;
+ALTER TABLE watch_id_seq OWNER TO gogs;
 
 --
--- Name: watch_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: watch_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE watch_id_seq OWNED BY watch.id;
 
 
 --
--- Name: webhook; Type: TABLE; Schema: public; Owner: stratus
+-- Name: webhook; Type: TABLE; Schema: public; Owner: gogs
 --
 
 CREATE TABLE webhook (
@@ -1433,10 +1433,10 @@ CREATE TABLE webhook (
 );
 
 
-ALTER TABLE webhook OWNER TO stratus;
+ALTER TABLE webhook OWNER TO gogs;
 
 --
--- Name: webhook_id_seq; Type: SEQUENCE; Schema: public; Owner: stratus
+-- Name: webhook_id_seq; Type: SEQUENCE; Schema: public; Owner: gogs
 --
 
 CREATE SEQUENCE webhook_id_seq
@@ -1447,269 +1447,269 @@ CREATE SEQUENCE webhook_id_seq
     CACHE 1;
 
 
-ALTER TABLE webhook_id_seq OWNER TO stratus;
+ALTER TABLE webhook_id_seq OWNER TO gogs;
 
 --
--- Name: webhook_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: stratus
+-- Name: webhook_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: gogs
 --
 
 ALTER SEQUENCE webhook_id_seq OWNED BY webhook.id;
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY access ALTER COLUMN id SET DEFAULT nextval('access_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY access_token ALTER COLUMN id SET DEFAULT nextval('access_token_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY action ALTER COLUMN id SET DEFAULT nextval('action_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY attachment ALTER COLUMN id SET DEFAULT nextval('attachment_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY collaboration ALTER COLUMN id SET DEFAULT nextval('collaboration_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY comment ALTER COLUMN id SET DEFAULT nextval('comment_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY deploy_key ALTER COLUMN id SET DEFAULT nextval('deploy_key_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY email_address ALTER COLUMN id SET DEFAULT nextval('email_address_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY follow ALTER COLUMN id SET DEFAULT nextval('follow_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY hook_task ALTER COLUMN id SET DEFAULT nextval('hook_task_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY issue ALTER COLUMN id SET DEFAULT nextval('issue_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY issue_label ALTER COLUMN id SET DEFAULT nextval('issue_label_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY issue_user ALTER COLUMN id SET DEFAULT nextval('issue_user_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY label ALTER COLUMN id SET DEFAULT nextval('label_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY login_source ALTER COLUMN id SET DEFAULT nextval('login_source_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY milestone ALTER COLUMN id SET DEFAULT nextval('milestone_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY mirror ALTER COLUMN id SET DEFAULT nextval('mirror_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY notice ALTER COLUMN id SET DEFAULT nextval('notice_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY org_user ALTER COLUMN id SET DEFAULT nextval('org_user_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY protect_branch ALTER COLUMN id SET DEFAULT nextval('protect_branch_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY protect_branch_whitelist ALTER COLUMN id SET DEFAULT nextval('protect_branch_whitelist_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY public_key ALTER COLUMN id SET DEFAULT nextval('public_key_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY pull_request ALTER COLUMN id SET DEFAULT nextval('pull_request_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY release ALTER COLUMN id SET DEFAULT nextval('release_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY repository ALTER COLUMN id SET DEFAULT nextval('repository_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY star ALTER COLUMN id SET DEFAULT nextval('star_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY team ALTER COLUMN id SET DEFAULT nextval('team_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY team_repo ALTER COLUMN id SET DEFAULT nextval('team_repo_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY team_user ALTER COLUMN id SET DEFAULT nextval('team_user_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY two_factor ALTER COLUMN id SET DEFAULT nextval('two_factor_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY two_factor_recovery_code ALTER COLUMN id SET DEFAULT nextval('two_factor_recovery_code_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY upload ALTER COLUMN id SET DEFAULT nextval('upload_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY "user" ALTER COLUMN id SET DEFAULT nextval('user_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY version ALTER COLUMN id SET DEFAULT nextval('version_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY watch ALTER COLUMN id SET DEFAULT nextval('watch_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: stratus
+-- Name: id; Type: DEFAULT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY webhook ALTER COLUMN id SET DEFAULT nextval('webhook_id_seq'::regclass);
 
 
 --
--- Data for Name: access; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: access; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY access (id, user_id, repo_id, mode) FROM stdin;
@@ -1717,14 +1717,14 @@ COPY access (id, user_id, repo_id, mode) FROM stdin;
 
 
 --
--- Name: access_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: access_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('access_id_seq', 1, false);
 
 
 --
--- Data for Name: access_token; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: access_token; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY access_token (id, uid, name, sha1, created_unix, updated_unix) FROM stdin;
@@ -1732,14 +1732,14 @@ COPY access_token (id, uid, name, sha1, created_unix, updated_unix) FROM stdin;
 
 
 --
--- Name: access_token_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: access_token_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('access_token_id_seq', 1, false);
 
 
 --
--- Data for Name: action; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: action; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY action (id, user_id, op_type, act_user_id, act_user_name, repo_id, repo_user_name, repo_name, ref_name, is_private, content, created_unix) FROM stdin;
@@ -1747,14 +1747,14 @@ COPY action (id, user_id, op_type, act_user_id, act_user_name, repo_id, repo_use
 
 
 --
--- Name: action_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: action_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('action_id_seq', 1, false);
 
 
 --
--- Data for Name: attachment; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: attachment; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY attachment (id, uuid, issue_id, comment_id, release_id, name, created_unix) FROM stdin;
@@ -1762,14 +1762,14 @@ COPY attachment (id, uuid, issue_id, comment_id, release_id, name, created_unix)
 
 
 --
--- Name: attachment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: attachment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('attachment_id_seq', 1, false);
 
 
 --
--- Data for Name: collaboration; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: collaboration; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY collaboration (id, repo_id, user_id, mode) FROM stdin;
@@ -1777,14 +1777,14 @@ COPY collaboration (id, repo_id, user_id, mode) FROM stdin;
 
 
 --
--- Name: collaboration_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: collaboration_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('collaboration_id_seq', 1, false);
 
 
 --
--- Data for Name: comment; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: comment; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY comment (id, type, poster_id, issue_id, commit_id, line, content, created_unix, updated_unix, commit_sha) FROM stdin;
@@ -1792,14 +1792,14 @@ COPY comment (id, type, poster_id, issue_id, commit_id, line, content, created_u
 
 
 --
--- Name: comment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: comment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('comment_id_seq', 1, false);
 
 
 --
--- Data for Name: deploy_key; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: deploy_key; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY deploy_key (id, key_id, repo_id, name, fingerprint, created_unix, updated_unix) FROM stdin;
@@ -1807,14 +1807,14 @@ COPY deploy_key (id, key_id, repo_id, name, fingerprint, created_unix, updated_u
 
 
 --
--- Name: deploy_key_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: deploy_key_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('deploy_key_id_seq', 1, false);
 
 
 --
--- Data for Name: email_address; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: email_address; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY email_address (id, uid, email, is_activated) FROM stdin;
@@ -1822,14 +1822,14 @@ COPY email_address (id, uid, email, is_activated) FROM stdin;
 
 
 --
--- Name: email_address_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: email_address_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('email_address_id_seq', 1, false);
 
 
 --
--- Data for Name: follow; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: follow; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY follow (id, user_id, follow_id) FROM stdin;
@@ -1837,14 +1837,14 @@ COPY follow (id, user_id, follow_id) FROM stdin;
 
 
 --
--- Name: follow_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: follow_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('follow_id_seq', 1, false);
 
 
 --
--- Data for Name: hook_task; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: hook_task; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY hook_task (id, repo_id, hook_id, uuid, type, url, signature, payload_content, content_type, event_type, is_ssl, is_delivered, delivered, is_succeed, request_content, response_content) FROM stdin;
@@ -1852,14 +1852,14 @@ COPY hook_task (id, repo_id, hook_id, uuid, type, url, signature, payload_conten
 
 
 --
--- Name: hook_task_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: hook_task_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('hook_task_id_seq', 1, false);
 
 
 --
--- Data for Name: issue; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: issue; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY issue (id, repo_id, index, poster_id, name, content, milestone_id, priority, assignee_id, is_closed, is_pull, num_comments, deadline_unix, created_unix, updated_unix) FROM stdin;
@@ -1867,14 +1867,14 @@ COPY issue (id, repo_id, index, poster_id, name, content, milestone_id, priority
 
 
 --
--- Name: issue_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: issue_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('issue_id_seq', 1, false);
 
 
 --
--- Data for Name: issue_label; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: issue_label; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY issue_label (id, issue_id, label_id) FROM stdin;
@@ -1882,14 +1882,14 @@ COPY issue_label (id, issue_id, label_id) FROM stdin;
 
 
 --
--- Name: issue_label_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: issue_label_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('issue_label_id_seq', 1, false);
 
 
 --
--- Data for Name: issue_user; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: issue_user; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY issue_user (id, uid, issue_id, repo_id, milestone_id, is_read, is_assigned, is_mentioned, is_poster, is_closed) FROM stdin;
@@ -1897,14 +1897,14 @@ COPY issue_user (id, uid, issue_id, repo_id, milestone_id, is_read, is_assigned,
 
 
 --
--- Name: issue_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: issue_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('issue_user_id_seq', 1, false);
 
 
 --
--- Data for Name: label; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: label; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY label (id, repo_id, name, color, num_issues, num_closed_issues) FROM stdin;
@@ -1912,14 +1912,14 @@ COPY label (id, repo_id, name, color, num_issues, num_closed_issues) FROM stdin;
 
 
 --
--- Name: label_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: label_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('label_id_seq', 1, false);
 
 
 --
--- Data for Name: login_source; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: login_source; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY login_source (id, type, name, is_actived, cfg, created_unix, updated_unix) FROM stdin;
@@ -1927,14 +1927,14 @@ COPY login_source (id, type, name, is_actived, cfg, created_unix, updated_unix) 
 
 
 --
--- Name: login_source_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: login_source_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('login_source_id_seq', 1, false);
 
 
 --
--- Data for Name: milestone; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: milestone; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY milestone (id, repo_id, name, content, is_closed, num_issues, num_closed_issues, completeness, deadline_unix, closed_date_unix) FROM stdin;
@@ -1942,14 +1942,14 @@ COPY milestone (id, repo_id, name, content, is_closed, num_issues, num_closed_is
 
 
 --
--- Name: milestone_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: milestone_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('milestone_id_seq', 1, false);
 
 
 --
--- Data for Name: mirror; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: mirror; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY mirror (id, repo_id, "interval", enable_prune, updated_unix, next_update_unix) FROM stdin;
@@ -1957,14 +1957,14 @@ COPY mirror (id, repo_id, "interval", enable_prune, updated_unix, next_update_un
 
 
 --
--- Name: mirror_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: mirror_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('mirror_id_seq', 1, false);
 
 
 --
--- Data for Name: notice; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: notice; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY notice (id, type, description, created_unix) FROM stdin;
@@ -1972,14 +1972,14 @@ COPY notice (id, type, description, created_unix) FROM stdin;
 
 
 --
--- Name: notice_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: notice_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('notice_id_seq', 1, false);
 
 
 --
--- Data for Name: org_user; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: org_user; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY org_user (id, uid, org_id, is_public, is_owner, num_teams) FROM stdin;
@@ -1987,14 +1987,14 @@ COPY org_user (id, uid, org_id, is_public, is_owner, num_teams) FROM stdin;
 
 
 --
--- Name: org_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: org_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('org_user_id_seq', 1, false);
 
 
 --
--- Data for Name: protect_branch; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: protect_branch; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY protect_branch (id, repo_id, name, protected, require_pull_request, enable_whitelist, whitelist_user_i_ds, whitelist_team_i_ds) FROM stdin;
@@ -2002,14 +2002,14 @@ COPY protect_branch (id, repo_id, name, protected, require_pull_request, enable_
 
 
 --
--- Name: protect_branch_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: protect_branch_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('protect_branch_id_seq', 1, false);
 
 
 --
--- Data for Name: protect_branch_whitelist; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: protect_branch_whitelist; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY protect_branch_whitelist (id, protect_branch_id, repo_id, name, user_id) FROM stdin;
@@ -2017,14 +2017,14 @@ COPY protect_branch_whitelist (id, protect_branch_id, repo_id, name, user_id) FR
 
 
 --
--- Name: protect_branch_whitelist_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: protect_branch_whitelist_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('protect_branch_whitelist_id_seq', 1, false);
 
 
 --
--- Data for Name: public_key; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: public_key; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY public_key (id, owner_id, name, fingerprint, content, mode, type, created_unix, updated_unix) FROM stdin;
@@ -2032,14 +2032,14 @@ COPY public_key (id, owner_id, name, fingerprint, content, mode, type, created_u
 
 
 --
--- Name: public_key_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: public_key_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('public_key_id_seq', 1, false);
 
 
 --
--- Data for Name: pull_request; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: pull_request; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY pull_request (id, type, status, issue_id, index, head_repo_id, base_repo_id, head_user_name, head_branch, base_branch, merge_base, has_merged, merged_commit_id, merger_id, merged_unix) FROM stdin;
@@ -2047,14 +2047,14 @@ COPY pull_request (id, type, status, issue_id, index, head_repo_id, base_repo_id
 
 
 --
--- Name: pull_request_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: pull_request_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('pull_request_id_seq', 1, false);
 
 
 --
--- Data for Name: release; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: release; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY release (id, repo_id, publisher_id, tag_name, lower_tag_name, target, title, sha1, num_commits, note, is_draft, is_prerelease, created_unix) FROM stdin;
@@ -2062,14 +2062,14 @@ COPY release (id, repo_id, publisher_id, tag_name, lower_tag_name, target, title
 
 
 --
--- Name: release_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: release_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('release_id_seq', 1, false);
 
 
 --
--- Data for Name: repository; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: repository; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY repository (id, owner_id, lower_name, name, description, website, default_branch, size, num_watches, num_stars, num_forks, num_issues, num_closed_issues, num_pulls, num_closed_pulls, num_milestones, num_closed_milestones, is_private, is_bare, is_mirror, enable_wiki, allow_public_wiki, enable_external_wiki, external_wiki_url, enable_issues, allow_public_issues, enable_external_tracker, external_tracker_url, external_tracker_format, external_tracker_style, enable_pulls, is_fork, fork_id, created_unix, updated_unix) FROM stdin;
@@ -2077,14 +2077,14 @@ COPY repository (id, owner_id, lower_name, name, description, website, default_b
 
 
 --
--- Name: repository_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: repository_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('repository_id_seq', 1, false);
 
 
 --
--- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY star (id, uid, repo_id) FROM stdin;
@@ -2092,14 +2092,14 @@ COPY star (id, uid, repo_id) FROM stdin;
 
 
 --
--- Name: star_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: star_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('star_id_seq', 1, false);
 
 
 --
--- Data for Name: team; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: team; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY team (id, org_id, lower_name, name, description, authorize, num_repos, num_members) FROM stdin;
@@ -2107,14 +2107,14 @@ COPY team (id, org_id, lower_name, name, description, authorize, num_repos, num_
 
 
 --
--- Name: team_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: team_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('team_id_seq', 1, false);
 
 
 --
--- Data for Name: team_repo; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: team_repo; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY team_repo (id, org_id, team_id, repo_id) FROM stdin;
@@ -2122,14 +2122,14 @@ COPY team_repo (id, org_id, team_id, repo_id) FROM stdin;
 
 
 --
--- Name: team_repo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: team_repo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('team_repo_id_seq', 1, false);
 
 
 --
--- Data for Name: team_user; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: team_user; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY team_user (id, org_id, team_id, uid) FROM stdin;
@@ -2137,14 +2137,14 @@ COPY team_user (id, org_id, team_id, uid) FROM stdin;
 
 
 --
--- Name: team_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: team_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('team_user_id_seq', 1, false);
 
 
 --
--- Data for Name: two_factor; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: two_factor; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY two_factor (id, user_id, secret, created_unix) FROM stdin;
@@ -2152,14 +2152,14 @@ COPY two_factor (id, user_id, secret, created_unix) FROM stdin;
 
 
 --
--- Name: two_factor_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: two_factor_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('two_factor_id_seq', 1, false);
 
 
 --
--- Data for Name: two_factor_recovery_code; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: two_factor_recovery_code; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY two_factor_recovery_code (id, user_id, code, is_used) FROM stdin;
@@ -2167,14 +2167,14 @@ COPY two_factor_recovery_code (id, user_id, code, is_used) FROM stdin;
 
 
 --
--- Name: two_factor_recovery_code_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: two_factor_recovery_code_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('two_factor_recovery_code_id_seq', 1, false);
 
 
 --
--- Data for Name: upload; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: upload; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY upload (id, uuid, name) FROM stdin;
@@ -2182,14 +2182,14 @@ COPY upload (id, uuid, name) FROM stdin;
 
 
 --
--- Name: upload_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: upload_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('upload_id_seq', 1, false);
 
 
 --
--- Data for Name: user; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: user; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY "user" (id, lower_name, name, full_name, email, passwd, login_type, login_source, login_name, type, location, website, rands, salt, created_unix, updated_unix, last_repo_visibility, max_repo_creation, is_active, is_admin, allow_git_hook, allow_import_local, prohibit_login, avatar, avatar_email, use_custom_avatar, num_followers, num_following, num_stars, num_repos, description, num_teams, num_members) FROM stdin;
@@ -2197,14 +2197,14 @@ COPY "user" (id, lower_name, name, full_name, email, passwd, login_type, login_s
 
 
 --
--- Name: user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('user_id_seq', 1, false);
 
 
 --
--- Data for Name: version; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: version; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY version (id, version) FROM stdin;
@@ -2213,14 +2213,14 @@ COPY version (id, version) FROM stdin;
 
 
 --
--- Name: version_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: version_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('version_id_seq', 1, true);
 
 
 --
--- Data for Name: watch; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: watch; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY watch (id, user_id, repo_id) FROM stdin;
@@ -2228,14 +2228,14 @@ COPY watch (id, user_id, repo_id) FROM stdin;
 
 
 --
--- Name: watch_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: watch_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('watch_id_seq', 1, false);
 
 
 --
--- Data for Name: webhook; Type: TABLE DATA; Schema: public; Owner: stratus
+-- Data for Name: webhook; Type: TABLE DATA; Schema: public; Owner: gogs
 --
 
 COPY webhook (id, repo_id, org_id, url, content_type, secret, events, is_ssl, is_active, hook_task_type, meta, last_status, created_unix, updated_unix) FROM stdin;
@@ -2243,14 +2243,14 @@ COPY webhook (id, repo_id, org_id, url, content_type, secret, events, is_ssl, is
 
 
 --
--- Name: webhook_id_seq; Type: SEQUENCE SET; Schema: public; Owner: stratus
+-- Name: webhook_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gogs
 --
 
 SELECT pg_catalog.setval('webhook_id_seq', 1, false);
 
 
 --
--- Name: access_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: access_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY access
@@ -2258,7 +2258,7 @@ ALTER TABLE ONLY access
 
 
 --
--- Name: access_token_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: access_token_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY access_token
@@ -2266,7 +2266,7 @@ ALTER TABLE ONLY access_token
 
 
 --
--- Name: action_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: action_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY action
@@ -2274,7 +2274,7 @@ ALTER TABLE ONLY action
 
 
 --
--- Name: attachment_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: attachment_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY attachment
@@ -2282,7 +2282,7 @@ ALTER TABLE ONLY attachment
 
 
 --
--- Name: collaboration_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: collaboration_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY collaboration
@@ -2290,7 +2290,7 @@ ALTER TABLE ONLY collaboration
 
 
 --
--- Name: comment_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: comment_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY comment
@@ -2298,7 +2298,7 @@ ALTER TABLE ONLY comment
 
 
 --
--- Name: deploy_key_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: deploy_key_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY deploy_key
@@ -2306,7 +2306,7 @@ ALTER TABLE ONLY deploy_key
 
 
 --
--- Name: email_address_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: email_address_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY email_address
@@ -2314,7 +2314,7 @@ ALTER TABLE ONLY email_address
 
 
 --
--- Name: follow_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: follow_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY follow
@@ -2322,7 +2322,7 @@ ALTER TABLE ONLY follow
 
 
 --
--- Name: hook_task_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: hook_task_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY hook_task
@@ -2330,7 +2330,7 @@ ALTER TABLE ONLY hook_task
 
 
 --
--- Name: issue_label_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: issue_label_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY issue_label
@@ -2338,7 +2338,7 @@ ALTER TABLE ONLY issue_label
 
 
 --
--- Name: issue_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: issue_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY issue
@@ -2346,7 +2346,7 @@ ALTER TABLE ONLY issue
 
 
 --
--- Name: issue_user_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: issue_user_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY issue_user
@@ -2354,7 +2354,7 @@ ALTER TABLE ONLY issue_user
 
 
 --
--- Name: label_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: label_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY label
@@ -2362,7 +2362,7 @@ ALTER TABLE ONLY label
 
 
 --
--- Name: login_source_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: login_source_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY login_source
@@ -2370,7 +2370,7 @@ ALTER TABLE ONLY login_source
 
 
 --
--- Name: milestone_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: milestone_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY milestone
@@ -2378,7 +2378,7 @@ ALTER TABLE ONLY milestone
 
 
 --
--- Name: mirror_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: mirror_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY mirror
@@ -2386,7 +2386,7 @@ ALTER TABLE ONLY mirror
 
 
 --
--- Name: notice_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: notice_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY notice
@@ -2394,7 +2394,7 @@ ALTER TABLE ONLY notice
 
 
 --
--- Name: org_user_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: org_user_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY org_user
@@ -2402,7 +2402,7 @@ ALTER TABLE ONLY org_user
 
 
 --
--- Name: protect_branch_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: protect_branch_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY protect_branch
@@ -2410,7 +2410,7 @@ ALTER TABLE ONLY protect_branch
 
 
 --
--- Name: protect_branch_whitelist_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: protect_branch_whitelist_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY protect_branch_whitelist
@@ -2418,7 +2418,7 @@ ALTER TABLE ONLY protect_branch_whitelist
 
 
 --
--- Name: public_key_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: public_key_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY public_key
@@ -2426,7 +2426,7 @@ ALTER TABLE ONLY public_key
 
 
 --
--- Name: pull_request_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: pull_request_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY pull_request
@@ -2434,7 +2434,7 @@ ALTER TABLE ONLY pull_request
 
 
 --
--- Name: release_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: release_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY release
@@ -2442,7 +2442,7 @@ ALTER TABLE ONLY release
 
 
 --
--- Name: repository_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: repository_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY repository
@@ -2450,7 +2450,7 @@ ALTER TABLE ONLY repository
 
 
 --
--- Name: star_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: star_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY star
@@ -2458,7 +2458,7 @@ ALTER TABLE ONLY star
 
 
 --
--- Name: team_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: team_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY team
@@ -2466,7 +2466,7 @@ ALTER TABLE ONLY team
 
 
 --
--- Name: team_repo_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: team_repo_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY team_repo
@@ -2474,7 +2474,7 @@ ALTER TABLE ONLY team_repo
 
 
 --
--- Name: team_user_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: team_user_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY team_user
@@ -2482,7 +2482,7 @@ ALTER TABLE ONLY team_user
 
 
 --
--- Name: two_factor_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: two_factor_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY two_factor
@@ -2490,7 +2490,7 @@ ALTER TABLE ONLY two_factor
 
 
 --
--- Name: two_factor_recovery_code_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: two_factor_recovery_code_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY two_factor_recovery_code
@@ -2498,7 +2498,7 @@ ALTER TABLE ONLY two_factor_recovery_code
 
 
 --
--- Name: upload_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: upload_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY upload
@@ -2506,7 +2506,7 @@ ALTER TABLE ONLY upload
 
 
 --
--- Name: user_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: user_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY "user"
@@ -2514,7 +2514,7 @@ ALTER TABLE ONLY "user"
 
 
 --
--- Name: version_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: version_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY version
@@ -2522,7 +2522,7 @@ ALTER TABLE ONLY version
 
 
 --
--- Name: watch_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: watch_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY watch
@@ -2530,7 +2530,7 @@ ALTER TABLE ONLY watch
 
 
 --
--- Name: webhook_pkey; Type: CONSTRAINT; Schema: public; Owner: stratus
+-- Name: webhook_pkey; Type: CONSTRAINT; Schema: public; Owner: gogs
 --
 
 ALTER TABLE ONLY webhook
@@ -2538,329 +2538,329 @@ ALTER TABLE ONLY webhook
 
 
 --
--- Name: IDX_access_token_uid; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_access_token_uid; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_access_token_uid" ON access_token USING btree (uid);
 
 
 --
--- Name: IDX_action_repo_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_action_repo_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_action_repo_id" ON action USING btree (repo_id);
 
 
 --
--- Name: IDX_attachment_issue_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_attachment_issue_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_attachment_issue_id" ON attachment USING btree (issue_id);
 
 
 --
--- Name: IDX_attachment_release_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_attachment_release_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_attachment_release_id" ON attachment USING btree (release_id);
 
 
 --
--- Name: IDX_collaboration_repo_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_collaboration_repo_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_collaboration_repo_id" ON collaboration USING btree (repo_id);
 
 
 --
--- Name: IDX_collaboration_user_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_collaboration_user_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_collaboration_user_id" ON collaboration USING btree (user_id);
 
 
 --
--- Name: IDX_comment_issue_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_comment_issue_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_comment_issue_id" ON comment USING btree (issue_id);
 
 
 --
--- Name: IDX_deploy_key_key_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_deploy_key_key_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_deploy_key_key_id" ON deploy_key USING btree (key_id);
 
 
 --
--- Name: IDX_deploy_key_repo_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_deploy_key_repo_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_deploy_key_repo_id" ON deploy_key USING btree (repo_id);
 
 
 --
--- Name: IDX_email_address_uid; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_email_address_uid; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_email_address_uid" ON email_address USING btree (uid);
 
 
 --
--- Name: IDX_hook_task_repo_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_hook_task_repo_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_hook_task_repo_id" ON hook_task USING btree (repo_id);
 
 
 --
--- Name: IDX_issue_repo_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_issue_repo_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_issue_repo_id" ON issue USING btree (repo_id);
 
 
 --
--- Name: IDX_issue_user_repo_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_issue_user_repo_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_issue_user_repo_id" ON issue_user USING btree (repo_id);
 
 
 --
--- Name: IDX_issue_user_uid; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_issue_user_uid; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_issue_user_uid" ON issue_user USING btree (uid);
 
 
 --
--- Name: IDX_label_repo_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_label_repo_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_label_repo_id" ON label USING btree (repo_id);
 
 
 --
--- Name: IDX_milestone_repo_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_milestone_repo_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_milestone_repo_id" ON milestone USING btree (repo_id);
 
 
 --
--- Name: IDX_org_user_org_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_org_user_org_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_org_user_org_id" ON org_user USING btree (org_id);
 
 
 --
--- Name: IDX_org_user_uid; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_org_user_uid; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_org_user_uid" ON org_user USING btree (uid);
 
 
 --
--- Name: IDX_public_key_owner_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_public_key_owner_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_public_key_owner_id" ON public_key USING btree (owner_id);
 
 
 --
--- Name: IDX_pull_request_issue_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_pull_request_issue_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_pull_request_issue_id" ON pull_request USING btree (issue_id);
 
 
 --
--- Name: IDX_repository_lower_name; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_repository_lower_name; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_repository_lower_name" ON repository USING btree (lower_name);
 
 
 --
--- Name: IDX_repository_name; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_repository_name; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_repository_name" ON repository USING btree (name);
 
 
 --
--- Name: IDX_team_org_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_team_org_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_team_org_id" ON team USING btree (org_id);
 
 
 --
--- Name: IDX_team_repo_org_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_team_repo_org_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_team_repo_org_id" ON team_repo USING btree (org_id);
 
 
 --
--- Name: IDX_team_user_org_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: IDX_team_user_org_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE INDEX "IDX_team_user_org_id" ON team_user USING btree (org_id);
 
 
 --
--- Name: UQE_access_s; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_access_s; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_access_s" ON access USING btree (user_id, repo_id);
 
 
 --
--- Name: UQE_access_token_sha1; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_access_token_sha1; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_access_token_sha1" ON access_token USING btree (sha1);
 
 
 --
--- Name: UQE_attachment_uuid; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_attachment_uuid; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_attachment_uuid" ON attachment USING btree (uuid);
 
 
 --
--- Name: UQE_collaboration_s; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_collaboration_s; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_collaboration_s" ON collaboration USING btree (repo_id, user_id);
 
 
 --
--- Name: UQE_deploy_key_s; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_deploy_key_s; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_deploy_key_s" ON deploy_key USING btree (key_id, repo_id);
 
 
 --
--- Name: UQE_email_address_email; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_email_address_email; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_email_address_email" ON email_address USING btree (email);
 
 
 --
--- Name: UQE_follow_follow; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_follow_follow; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_follow_follow" ON follow USING btree (user_id, follow_id);
 
 
 --
--- Name: UQE_issue_label_s; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_issue_label_s; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_issue_label_s" ON issue_label USING btree (issue_id, label_id);
 
 
 --
--- Name: UQE_issue_repo_index; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_issue_repo_index; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_issue_repo_index" ON issue USING btree (repo_id, index);
 
 
 --
--- Name: UQE_login_source_name; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_login_source_name; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_login_source_name" ON login_source USING btree (name);
 
 
 --
--- Name: UQE_org_user_s; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_org_user_s; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_org_user_s" ON org_user USING btree (uid, org_id);
 
 
 --
--- Name: UQE_protect_branch_protect_branch; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_protect_branch_protect_branch; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_protect_branch_protect_branch" ON protect_branch USING btree (repo_id, name);
 
 
 --
--- Name: UQE_protect_branch_whitelist_protect_branch_whitelist; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_protect_branch_whitelist_protect_branch_whitelist; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_protect_branch_whitelist_protect_branch_whitelist" ON protect_branch_whitelist USING btree (repo_id, name, user_id);
 
 
 --
--- Name: UQE_repository_s; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_repository_s; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_repository_s" ON repository USING btree (owner_id, lower_name);
 
 
 --
--- Name: UQE_star_s; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_star_s; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_star_s" ON star USING btree (uid, repo_id);
 
 
 --
--- Name: UQE_team_repo_s; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_team_repo_s; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_team_repo_s" ON team_repo USING btree (team_id, repo_id);
 
 
 --
--- Name: UQE_team_user_s; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_team_user_s; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_team_user_s" ON team_user USING btree (team_id, uid);
 
 
 --
--- Name: UQE_two_factor_user_id; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_two_factor_user_id; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_two_factor_user_id" ON two_factor USING btree (user_id);
 
 
 --
--- Name: UQE_upload_uuid; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_upload_uuid; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_upload_uuid" ON upload USING btree (uuid);
 
 
 --
--- Name: UQE_user_lower_name; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_user_lower_name; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_user_lower_name" ON "user" USING btree (lower_name);
 
 
 --
--- Name: UQE_user_name; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_user_name; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_user_name" ON "user" USING btree (name);
 
 
 --
--- Name: UQE_watch_watch; Type: INDEX; Schema: public; Owner: stratus
+-- Name: UQE_watch_watch; Type: INDEX; Schema: public; Owner: gogs
 --
 
 CREATE UNIQUE INDEX "UQE_watch_watch" ON watch USING btree (user_id, repo_id);

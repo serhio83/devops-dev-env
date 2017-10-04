@@ -1,1 +1,6 @@
 ---
+- name: Deploy prometheus docker project
+  docker_service:
+    pull: yes
+    project_name: prometheus
+    project_src: "{{ prometheus_docker_compose_path }}"

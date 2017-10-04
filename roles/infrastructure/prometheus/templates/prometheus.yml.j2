@@ -1,23 +1,26 @@
 # my global config
 global:
-  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
-  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
-  # scrape_timeout is set to the global default (10s).
-
+  scrape_interval: {{ prometheus_scrape_interval }}
+  evaluation_interval: {{ prometheus_evaluation_interval }}
+  
   # Attach these labels to any time series or alerts when communicating with
   # external systems (federation, remote storage, Alertmanager).
   external_labels:
-      monitor: 'stratus_mon'
+      monitor: {{ prometheus_attach_label_monitor }}
 
-# Configuration for the endpoints containing the metrics to scrape.
-# Every exporter you want to scrape must be added with the following syntax:
-#scrape_configs:
-#  - job_name: 'unique_name_for_the_exporter'
-#    scrape_interval: time_interval_between_scrapes[s,m]
-#    static_configs:
-#      - targets: ['address:port']
-# Below are the exporters included in this repository
-# Delete or add new ones and edit the addresses as necessary.
+# AlertManager configuration
+alerting:
+  alertmanagers:
+  - scheme: http
+    static_configs:
+    - targets:
+       - {{ prometheus_alert_manager_target }}
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+# Rules files contain definition for alerts the system will
+# raise when certain conditions are met.
+rule_files:
+  - {{ prometheus_rules_path }}
 
 scrape_configs:
 #  - job_name: 'nodeexporter'
@@ -50,26 +53,12 @@ scrape_configs:
 #    static_configs:
 #    - targets: ['localhost:9115']
 #
-  - job_name: 'postgres'
-    honor_labels: true
-    static_configs:
-      - targets: ['localhost:9187']
-
-  - job_name: 'nginx'
-    scrape_interval: 10s
-    static_configs:
-      - targets: ['localhost:9113']
-
-# AlertManager configuration
-alerting:
-  alertmanagers:
-  - scheme: http
-    static_configs:
-    - targets:
-       - "localhost:9093"
-
-# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
-# Rules files contain definition for alerts the system will
-# raise when certain conditions are met.
-rule_files:
-  - '/etc/prometheus/*.rules'
+#  - job_name: 'postgres'
+#    honor_labels: true
+#    static_configs:
+#      - targets: ['localhost:9187']
+#
+#  - job_name: 'nginx'
+#    scrape_interval: 10s
+#    static_configs:
+#      - targets: ['localhost:9113']
