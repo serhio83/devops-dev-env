@@ -1,7 +1,7 @@
 ---
 
 - hosts: 
-    - vm1.getcloud.io
+    - vm1
   roles:
     - infrastructure/common-server
     - infrastructure/docker-host

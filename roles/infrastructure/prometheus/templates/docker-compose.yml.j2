@@ -14,6 +14,19 @@ services:
     networks:
       - stratus_default
 
+  postgres_exporter:
+    container_name: postgres_exporter
+    image: wrouesnel/postgres_exporter
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "9187:9187"
+    restart: always
+    networks:
+      - stratus_default
+    environment:
+      - DATA_SOURCE_NAME={{ postgres_exporter_datasource_name }}
+
 volumes:
   data: {}
   cfg: {}
