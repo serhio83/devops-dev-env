@@ -1,4 +1,4 @@
-docker_version: 17.06.2
+docker_version: 17.09.0
 docker_compose_version: 1.15.0
 psycopg2_version: 2.7.3.1
 
