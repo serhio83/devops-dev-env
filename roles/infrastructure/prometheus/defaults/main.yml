@@ -7,6 +7,6 @@ prometheus_docker_volume_name: 'prometheus_data'
 prometheus_scrape_interval: '15s'
 prometheus_evaluation_interval: '15s'
 prometheus_attach_label_monitor: 'stratus_mon'
-prometheus_alert_manager_target: 'localhost:9093'
-prometheus_rules_path: '/etc/prometheus/*.rules'
+prometheus_alert_manager_target: 'alertmanager:9093'
+prometheus_rules_path: '/cfg/rules/*.rules'
 postgres_exporter_datasource_name: "postgresql://{{ postgres_user }}:{{ postgres_password }}@postgres:5432/postgres?sslmode=disable"

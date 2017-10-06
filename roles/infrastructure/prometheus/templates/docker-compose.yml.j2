@@ -27,9 +27,24 @@ services:
     environment:
       - DATA_SOURCE_NAME={{ postgres_exporter_datasource_name }}
 
+  alertmanager:
+    container_name: alertmanager
+    image: prom/alertmanager
+    ports:
+      - "9093:9093"
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - cfg:/cfg
+      - alertmanager:/alertmanager
+    networks:
+      - stratus_default
+    command: ["-config.file=/cfg/alertmanager.yml", "-storage.path=/alertmanager"]
+
 volumes:
   data: {}
   cfg: {}
+  alertmanager: {}
 
 networks:
   stratus_default:

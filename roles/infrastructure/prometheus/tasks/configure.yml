@@ -50,3 +50,12 @@
 
 - name: Copy prometheus compose file
   template: src=docker-compose.yml.j2 dest={{ prometheus_docker_compose_path }}/docker-compose.yml owner=root group=root mode=755
+
+- name: Copy prometheus rules
+  copy:
+    src: rules
+    dest: "{{ prometheus_docker_volume_cfg_path }}/_data/"
+
+- name: Copy alertmanager config
+  template: src=alertmanager.yml.j2 dest={{ prometheus_docker_volume_cfg_path }}/_data/alertmanager.yml owner=root group=root mode=755
+
