@@ -1,14 +1,9 @@
-# my global config
 global:
   scrape_interval: {{ prometheus_scrape_interval }}
   evaluation_interval: {{ prometheus_evaluation_interval }}
-  
-  # Attach these labels to any time series or alerts when communicating with
-  # external systems (federation, remote storage, Alertmanager).
   external_labels:
       monitor: {{ prometheus_attach_label_monitor }}
 
-# AlertManager configuration
 alerting:
   alertmanagers:
   - scheme: http
@@ -16,49 +11,30 @@ alerting:
     - targets:
        - {{ prometheus_alert_manager_target }}
 
-# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
-# Rules files contain definition for alerts the system will
-# raise when certain conditions are met.
 rule_files:
   - {{ prometheus_rules_path }}
 
 scrape_configs:
-#  - job_name: 'nodeexporter'
-#    scrape_interval: 5s
-#    static_configs:
-#      - targets: ['localhost:9100']
-#
-#  - job_name: 'cadvisor'
-#    scrape_interval: 5s
-#    static_configs:
-#      - targets: ['localhost:8080']
-#
-#  - job_name: "blackbox"
-#    scrape_interval: "30s"
-#    metrics_path: /probe
-#    scheme: "http"
-#    params:
-#      module: ["https_our_webservice"]
-#      target: ["localhost"]
-#    static_configs:
-#      - targets: ['localhost:9115']
-#
-#  - job_name: "blackbox_ping"
-#    scrape_interval: "15s"
-#    metrics_path: /probe
-#    scheme: "http"
-#    params:
-#      module: ["icmp_example"]
-#      target: ["localhost"]
-#    static_configs:
-#    - targets: ['localhost:9115']
-
   - job_name: 'postgres'
     honor_labels: true
     static_configs:
       - targets: ['postgres_exporter:9187']
-
-#  - job_name: 'nginx'
-#    scrape_interval: 10s
-#    static_configs:
-#      - targets: ['localhost:9113']
+  
+  - job_name: 'blackbox'
+    scrape_interval: 1m
+    scrape_timeout: 10s
+    metrics_path: /probe
+    params:
+      module: [https]
+    static_configs:
+      - targets: ['blackbox_exporter:9115']
+    file_sd_configs:
+      - files:
+        - /cfg/targets.yml
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox_exporter:9115

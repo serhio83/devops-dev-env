@@ -41,6 +41,19 @@ services:
       - stratus_default
     command: ["-config.file=/cfg/alertmanager.yml", "-storage.path=/alertmanager"]
 
+  blackbox_exporter:
+    container_name: blackbox_exporter
+    image: prom/blackbox-exporter
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - cfg:/cfg
+    ports:
+      - "9115:9115"
+    restart: always
+    networks:
+      - stratus_default
+    command: ["-config.file=/cfg/blackbox.yml"]
+
 volumes:
   data: {}
   cfg: {}

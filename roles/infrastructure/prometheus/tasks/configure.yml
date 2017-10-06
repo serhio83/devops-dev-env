@@ -59,3 +59,9 @@
 - name: Copy alertmanager config
   template: src=alertmanager.yml.j2 dest={{ prometheus_docker_volume_cfg_path }}/_data/alertmanager.yml owner=root group=root mode=755
 
+- name: Copy targets for blackbox exporter
+  template: src=targets.yml.j2 dest={{ prometheus_docker_volume_cfg_path }}/_data/targets.yml owner=root group=root mode=755
+
+- name: Copy blackbox config
+  template: src=blackbox.yml.j2 dest={{ prometheus_docker_volume_cfg_path }}/_data/blackbox.yml owner=root group=root mode=755
+

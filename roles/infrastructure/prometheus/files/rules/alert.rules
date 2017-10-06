@@ -8,9 +8,10 @@ ALERT high_load
       description = "{{ $labels.instance }} of job {{ $labels.job }} is under high load.",
   }
 
-ALERT webservice_down
+ALERT website_down
   IF probe_success == 0
+  LABELS { severity = "page" }
   ANNOTATIONS {
-      summary = "Webservice down",
-      description = "Blackbox probe indicates webservice is currently down"
+    summary = "Instance {{ $labels.instance }} down",
+    description = "{{ $labels.instance }} of job {{ $labels.job }} has been down.",
   }
