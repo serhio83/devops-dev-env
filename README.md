@@ -7,6 +7,8 @@
 * postgres
 * gogs with postgres db
 * gocd
+* prometheus + alertmanager
+
 
 ## Recuirements:
 ### Devel local
