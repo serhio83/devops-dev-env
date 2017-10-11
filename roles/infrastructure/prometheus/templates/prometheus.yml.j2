@@ -25,12 +25,14 @@ scrape_configs:
     scrape_timeout: 10s
     metrics_path: /probe
     params:
-      module: [https]
+      module: [http_2xx]
     static_configs:
-      - targets: ['blackbox_exporter:9115']
-    file_sd_configs:
-      - files:
-        - /cfg/targets.yml
+      - targets:
+        - https://fbs.id
+        - https://fbs.com
+        - https://google.com
+        - http://www.lostfilm.tv
+
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target

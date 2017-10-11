@@ -39,7 +39,7 @@ services:
       - alertmanager:/alertmanager
     networks:
       - stratus_default
-    command: ["-config.file=/cfg/alertmanager.yml", "-storage.path=/alertmanager"]
+    command: ["--config.file=/cfg/alertmanager.yml", "-storage.path=/alertmanager"]
 
   blackbox_exporter:
     container_name: blackbox_exporter
@@ -52,12 +52,15 @@ services:
     restart: always
     networks:
       - stratus_default
-    command: ["-config.file=/cfg/blackbox.yml"]
+    entrypoint:
+      - blackbox_exporter
+      - --config.file=/cfg/blackbox.yml
 
 volumes:
   data: {}
   cfg: {}
   alertmanager: {}
+  blackboxexporter: {}
 
 networks:
   stratus_default:
