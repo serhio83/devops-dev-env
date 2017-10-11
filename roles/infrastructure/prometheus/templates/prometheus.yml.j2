@@ -25,13 +25,38 @@ scrape_configs:
     scrape_timeout: 10s
     metrics_path: /probe
     params:
-      module: [http_2xx]
+      module: [https]
     static_configs:
       - targets:
         - https://fbs.id
         - https://fbs.com
-        - https://google.com
-        - http://www.lostfilm.tv
+        - https://esfbs.com
+        - https://fbs.ae
+        - https://fbs.cn
+        - https://fbs.co.th
+        - https://fbs.com.bd
+        - https://fbs.com.mm
+        - https://fbs.forex
+        - https://fbsde.com
+        - https://fbsfx.pk
+        - https://fbsit.com
+        - https://fbstr.com
+        - https://fbsturk.com
+        - https://turkeyfbs.com
+        - https://fbsturkey.com
+        - https://fbstrk.com
+        - https://trkfbs.com
+        - https://frfbs.com
+        - https://idnfbs.com
+        - https://jpfbs.com
+        - https://kofbs.com
+        - https://laofbs.com
+        - https://ltfbs.com
+        - https://ptfbs.com
+        - https://tafbs.com
+        - https://thfbs.com
+        - https://trfbs.com
+        - https://vnfbs.com
 
     relabel_configs:
       - source_labels: [__address__]

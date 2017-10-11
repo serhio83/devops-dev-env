@@ -1,2 +1,10 @@
 ---
-# handlers file for prometheus
+
+- name: docker_restart_prometheus
+  shell: docker restart prometheus
+
+- name: docker_restart_alertmanager
+  shell: docker restart alertmanager
+
+- name: docker_restart_blackbox_exporter
+  shell: docker restart blackbox_exporter
