@@ -1,2 +1,10 @@
 ---
-# tasks file for stratus-nginx-proxy
+- include: configure.yml
+  tags:
+    - initial
+    - configure
+
+- include: deploy.yml
+  tags:
+    - initial
+    - deploy
