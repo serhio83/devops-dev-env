@@ -1,5 +1,5 @@
 ---
-- name: Create ZFS filesystem for "{{ prometheus_docker_volume_cfg_name }}" data
+- name: Create ZFS filesystem for "{{ prometheus_docker_volume_cfg_name }}" config
   zfs:
     name: "{{ docker_zfs_pool_name }}/{{ prometheus_docker_volume_cfg_name }}"
     state: present

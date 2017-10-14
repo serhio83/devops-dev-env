@@ -1,1 +1,26 @@
 ---
+- name: Create ZFS filesystem for "{{ stratus_backend_docker_volume_cfg_name }}" config
+  zfs:
+    name: "{{ docker_zfs_pool_name }}/{{ stratus_backend_docker_volume_cfg_name }}"
+    state: present
+    mountpoint: "/var/lib/docker/volumes/{{ stratus_backend_docker_volume_cfg_name }}"
+    compression: lz4
+
+- name: Check if docker volume "{{ stratus_backend_docker_volume_cfg_name }}" exists
+  command: docker volume inspect "{{ stratus_backend_docker_volume_cfg_name }}"
+  register: volume_exists
+  failed_when: false
+  changed_when: False
+
+- name: Create docker volume "{{ stratus_backend_docker_volume_cfg_name }}"
+  command: docker volume create --name "{{ stratus_backend_docker_volume_cfg_name }}"
+  when: volume_exists|failed
+
+- name: Create compose dir if not exist
+  file:
+    path: "{{ stratus_backend_docker_compose_path }}"
+    state: directory
+    mode: 0755
+
+- name: Copy stratus_backend compose file
+  template: src=docker-compose.yml.j2 dest={{ stratus_backend_docker_compose_path }}/docker-compose.yml owner=root group=root mode=755

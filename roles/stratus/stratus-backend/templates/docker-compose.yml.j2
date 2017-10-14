@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./compose/django/Dockerfile-dev
+    command: /start-dev.sh
+    environment:
+      - POSTGRES_USER=stratus
+      - USE_DOCKER=yes
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+
+volumes:
+  
