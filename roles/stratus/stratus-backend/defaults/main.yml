@@ -1,4 +1,4 @@
 ---
 stratus_backend_docker_compose_path: /opt/docker-compose/stratus/stratus_backend
-stratus_backend_docker_volume_cfg_path: /var/lib/docker/volumes/stratus_backend_cfg
-stratus_backend_docker_volume_cfg_name: 'stratus_backend_cfg'
+stratus_backend_docker_volume_app_path: /var/lib/docker/volumes/stratus_backend_app
+stratus_backend_docker_volume_app_name: 'stratus_backend_app'

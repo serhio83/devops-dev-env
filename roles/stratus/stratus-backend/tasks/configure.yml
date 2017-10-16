@@ -1,19 +1,19 @@
 ---
-- name: Create ZFS filesystem for "{{ stratus_backend_docker_volume_cfg_name }}" config
+- name: Create ZFS filesystem for "{{ stratus_backend_docker_volume_app_name }}" app
   zfs:
-    name: "{{ docker_zfs_pool_name }}/{{ stratus_backend_docker_volume_cfg_name }}"
+    name: "{{ docker_zfs_pool_name }}/{{ stratus_backend_docker_volume_app_name }}"
     state: present
-    mountpoint: "/var/lib/docker/volumes/{{ stratus_backend_docker_volume_cfg_name }}"
+    mountpoint: "/var/lib/docker/volumes/{{ stratus_backend_docker_volume_app_name }}"
     compression: lz4
 
-- name: Check if docker volume "{{ stratus_backend_docker_volume_cfg_name }}" exists
-  command: docker volume inspect "{{ stratus_backend_docker_volume_cfg_name }}"
+- name: Check if docker volume "{{ stratus_backend_docker_volume_app_name }}" exists
+  command: docker volume inspect "{{ stratus_backend_docker_volume_app_name }}"
   register: volume_exists
   failed_when: false
   changed_when: False
 
-- name: Create docker volume "{{ stratus_backend_docker_volume_cfg_name }}"
-  command: docker volume create --name "{{ stratus_backend_docker_volume_cfg_name }}"
+- name: Create docker volume "{{ stratus_backend_docker_volume_app_name }}"
+  command: docker volume create --name "{{ stratus_backend_docker_volume_app_name }}"
   when: volume_exists|failed
 
 - name: Create compose dir if not exist
@@ -22,5 +22,25 @@
     state: directory
     mode: 0755
 
+- name: Copy ssh id_rsa
+  copy:
+    src: ~/.ssh/id_rsa
+    dest: ~/.ssh/id_rsa
+    mode: 0600
+
+- name: Copy ssh id_rsa.pub
+  copy:
+    src: ~/.ssh/id_rsa.pub
+    dest: ~/.ssh/id_rsa.pub
+    mode: 0600
+
 - name: Copy stratus_backend compose file
   template: src=docker-compose.yml.j2 dest={{ stratus_backend_docker_compose_path }}/docker-compose.yml owner=root group=root mode=755
+
+- name: Clone stratus_backend repository
+  git:
+    repo: "git@git.lab.getcloud.io:cloud/stratus.git"
+    dest: "/var/lib/docker/volumes/{{ stratus_backend_docker_volume_app_name }}/_data"
+    version: "master"
+    ssh_opts: -o ForwardAgent=yes
+    accept_hostkey: yes

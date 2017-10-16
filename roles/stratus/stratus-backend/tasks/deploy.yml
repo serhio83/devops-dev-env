@@ -1,1 +1,6 @@
 ---
+- name: Deploy stratus_backend docker project
+  docker_service:
+    pull: yes
+    project_name: stratus_backend
+    project_src: "{{ stratus_backend_docker_compose_path }}"
