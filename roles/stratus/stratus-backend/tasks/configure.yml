@@ -41,6 +41,19 @@
   git:
     repo: "git@git.lab.getcloud.io:cloud/stratus.git"
     dest: "/var/lib/docker/volumes/{{ stratus_backend_docker_volume_app_name }}/_data"
-    version: "master"
+    version: "deploy"
     ssh_opts: -o ForwardAgent=yes
     accept_hostkey: yes
+
+- name: Copy database user creation script
+  template:
+    src: init.sql.j2
+    dest: "/var/lib/docker/volumes/{{ postgres_backup_docker_volume_name }}/_data/init.sql"
+
+- name: Copy stratus_backend app config
+  template:
+    src: env.j2
+    dest: "{{ stratus_backend_docker_volume_app_path }}/_data/config/settings/.env"
+
+- name: Create database user
+  command: docker exec -t postgres sh -c 'psql -U postgres < /backups/init.sql'

@@ -1,0 +1,2 @@
+CREATE USER {{ stratus_pg_user }} WITH CREATEDB PASSWORD '{{ stratus_pg_password }}';
+CREATE DATABASE {{ stratus_pg_user }} OWNER {{ stratus_pg_user }};
