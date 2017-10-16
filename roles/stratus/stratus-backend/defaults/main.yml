@@ -1,4 +1,10 @@
 ---
 stratus_backend_docker_compose_path: /opt/docker-compose/stratus/stratus_backend
-stratus_backend_docker_volume_app_path: /var/lib/docker/volumes/stratus_backend_app
-stratus_backend_docker_volume_app_name: 'stratus_backend_app'
+stratus_backend_docker_volume_app_path: /var/lib/docker/volumes/stratusbackend_app
+stratus_backend_docker_volume_app_name: 'stratusbackend_app'
+stratus_pg_user: stratus
+stratus_pg_password: stratus2017
+stratus_pg_host: postgres
+stratus_pg_port: 5432
+stratus_redis_host: stratus_redis
+stratus_redis_port: 6379

@@ -1,5 +1,5 @@
 ---
-- name: Create ZFS filesystem for "{{ stratus_backend_docker_volume_app_name }}" app
+- name: Create ZFS filesystem for "{{ stratus_backend_docker_volume_app_name }}"
   zfs:
     name: "{{ docker_zfs_pool_name }}/{{ stratus_backend_docker_volume_app_name }}"
     state: present

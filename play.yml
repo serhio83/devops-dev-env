@@ -10,5 +10,5 @@
     - infrastructure/prometheus
     - infrastructure/gogs
     - infrastructure/gocd
-    - infrastructure/tailon
     - stratus/stratus-backend
+    - infrastructure/tailon
