@@ -9,6 +9,5 @@
     - infrastructure/postgres
     - infrastructure/prometheus
     - infrastructure/gogs
-    - infrastructure/gocd
-    - stratus/stratus-backend
-    - infrastructure/tailon
+    # - infrastructure/gocd
+    # - stratus/stratus-backend
