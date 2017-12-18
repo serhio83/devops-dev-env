@@ -11,4 +11,3 @@ sh -c 'vagrant up'
 ssh-keyscan -p2222 -t rsa 127.0.0.1 >> $HOME/.ssh/known_hosts
 ssh-keyscan -p2222 -t rsa localhost >> $HOME/.ssh/known_hosts
 ansible-playbook -i inv play.yml --limit devel
-# ansible-playbook -i inv play.yml --limit devel --tags gogs_deploy
