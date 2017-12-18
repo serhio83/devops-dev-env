@@ -1,5 +1,4 @@
 ---
-
 - hosts: 
     - vm1
   roles:
@@ -9,5 +8,5 @@
     - infrastructure/postgres
     - infrastructure/prometheus
     - infrastructure/gogs
-    # - infrastructure/gocd
+    - infrastructure/drone
     # - stratus/stratus-backend

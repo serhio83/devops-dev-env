@@ -1,0 +1,3 @@
+---
+- name: Do conf command
+  shell: echo "Q from conf"

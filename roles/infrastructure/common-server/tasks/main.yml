@@ -2,13 +2,10 @@
 - block:
     - include: install.yml
       tags:
-        - initial
         - install
     - include: configure.yml
       tags:
-        - initial
         - configure
 
   tags:
-    - initial
     - role-common-server

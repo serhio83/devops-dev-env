@@ -1,2 +1,10 @@
 ---
-# tasks file for drone
+- block:
+    - include: install.yml
+      tags:
+        - install
+    - include: configure.yml
+      tags:
+        - configure
+  tags:
+    - role-drone

@@ -1,10 +1,10 @@
 ---
-- include: configure.yml
+- block:
+    - include: configure.yml
+      tags:
+        - configure
+    - include: deploy.yml
+      tags:
+        - deploy
   tags:
-    - initial
-    - configure
-
-- include: deploy.yml
-  tags:
-    - initial
-    - deploy
+    - role-rsyslogd
