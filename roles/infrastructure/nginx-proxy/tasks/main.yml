@@ -1,0 +1,10 @@
+---
+- include: configure.yml
+  tags:
+    - initial
+    - configure
+
+- include: deploy.yml
+  tags:
+    - initial
+    - deploy

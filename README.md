@@ -7,6 +7,7 @@
 * postgres
 * gogs with postgres db
 * gocd
+* drone
 * prometheus + alertmanager
 
 
